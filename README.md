@@ -4,4 +4,4 @@
 More informations on my blog (in french) http://schoewilliam.legtux.org/blog.
 Have a preview ;
 
-[Screenshot](http://i.imgur.com/MEZqj.png)
+![Screenshot](http://i.imgur.com/MEZqj.png)
