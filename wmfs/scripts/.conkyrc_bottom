@@ -1,0 +1,46 @@
+out_to_console yes
+out_to_x no
+background yes
+update_interval 1
+total_run_times 0
+no_buffers yes
+
+default_color FFFFFF #blanc
+default_shade_color 333333
+default_outline_color black
+
+use_xft yes
+
+color0 EEEEEE #normal
+color1 B3B3B3 #gris
+color2 FDA53C #orange
+color3 E8DD9E #jaune
+color4 A6D4E0 #bleu
+color5 FFA500 #camel
+color6 BDE077 #vert
+color7 D8ADFF #mauve
+color8 FF95D1 #rose
+
+ 
+TEXT
+^s[left;\#BBBBBB;  ]^i[left;0;0;/home/william/.config/wmfs/icons/stat/cpu.png]^s[left;\#BBBBBB; CPU:]^s[left;\#FDA53C;   ${cpu}% ] ^g[left;80;10;${cpu};100;\#333333;\#FDA53C;ckycpu](1;spawn;urxvt -e htop)\
+^s[left;\#444444;   |   ]\
+^i[left;0;0;/home/william/.config/wmfs/icons/stat/mem.png] ^s[left;\#BBBBBB; MEM:]  ^s[left;\#BDE077;   $mem]^s[left;\#444444;/$memmax]^s[left;\#BDE077;   $memperc% ]^g[left;80;10;$memperc;100;\#333333;\#BDE077;ckymem](1;spawn;urxvt -e htop)\
+^s[left;\#888888;   ${top_mem mem 1} ${top name 1}]\
+${if_running mocp}\
+^i[right;0;0;/home/william/.config/wmfs/icons/stat/note.png](1;spawn;urxvt -e mocp)^s[right;\#BBBBBB; MOC:   ](1;spawn;urxvt -e mocp)$else^i[right;0;0;/home/william/.config/wmfs/icons/stat/note.png](1;spawn;urxvt -e mocp)^s[right;\#A6D4E0;  MOC est arrêté   ](1;spawn;urxvt -e mocp)$endif\
+${if_running mocp}\
+${if_match "${exec mocp -Q %state}" == "PLAY"}^s[right;\#BDE077;// ]^s[right;\#BBBBBB;${exec mocp -Q %song} - ${exec mocp -Q %artist}   ]$endif\
+${if_match "${exec mocp -Q %state}" == "PAUSE"}^s[right;\#FDA53C;// ]^s[right;\#BBBBBB;${exec mocp -Q %song} - ${exec mocp -Q %artist}  ]$endif\
+${if_match "${exec mocp -Q %state}" == "PLAY"}^s[right;\#BDE077;Lecture ](1;spawn;mocp -G)$endif${if_match "${exec mocp -Q %state}" == "PAUSE"}^s[right;\#FDA35C;Pause ](1;spawn;mocp -G)$endif${if_match "${exec mocp -Q %state}" == "STOP"}^s[right;\#A6D4E0;Arrêt ](1;spawn;mocp -p)$endif$endif\
+${if_running mocp}${if_match "${exec mocp -Q %state}" == "PLAY"}^s[right;\#BDE077;{ ]^i[right;0;0;/home/william/.config/wmfs/icons/stat/pause.png](1;spawn;mocp -G)^s[right;\#BDE077; }]$endif\
+${if_match "${exec mocp -Q %state}" == "PAUSE"}^s[right;\#FDA53C;{ ]^i[right;0;0;/home/william/.config/wmfs/icons/stat/play.png](1;spawn;mocp -G)^s[right;\#FDA53C; }]$endif\
+${if_match "${exec mocp -Q %state}" == "STOP"}^s[right;\#A6D4E0;{ ]^i[right;0;0;/home/william/.config/wmfs/icons/stat/stop.png](1;spawn;mocp -p)^s[right;\#A6D4E0; }  ]$endif\
+$endif\
+${if_running mocp}${if_match "${exec mocp -Q %state}" == "PLAY"}^s[right;\#444444; - ]^i[right;0;0;/home/william/.config/wmfs/icons/stat/previous.png](1;spawn;mocp -r)$endif\
+${if_match "${exec mocp -Q %state}" == "PLAY"}^s[right;\#444444; ]^i[right;0;0;/home/william/.config/wmfs/icons/stat/next.png](1;spawn;mocp -f)^s[right;\#BBBBBB; ]$endif\
+${if_match "${exec mocp -Q %state}" == "PAUSE"}^s[right;\#444444; - ]^i[right;0;0;/home/william/.config/wmfs/icons/stat/previous.png](1;spawn;mocp -r)$endif\
+${if_match "${exec mocp -Q %state}" == "PAUSE"}^s[right;\#444444; ]^i[right;0;0;/home/william/.config/wmfs/icons/stat/next.png](1;spawn;mocp -f)^s[right;\#BBBBBB; ]$endif\
+${if_match "${exec mocp -Q %state}" == "PLAY"}^s[right;\#444444; ]^i[right;0;0;/home/william/.config/wmfs/icons/stat/stop.png](1;spawn;mocp -s)^s[right;\#BBBBBB;   ]$endif\
+${if_match "${exec mocp -Q %state}" == "PAUSE"}^s[right;\#444444; ]^i[right;0;0;/home/william/.config/wmfs/icons/stat/stop.png](1;spawn;mocp -s)^s[right;\#BBBBBB;   ]$endif\
+$endif\
