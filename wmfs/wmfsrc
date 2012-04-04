@@ -1,0 +1,350 @@
+#
+# WMFS2 configuration file
+#
+
+# Possible file inclusion:
+# @include "file"
+
+@include "~/.config/wmfs/wmfs-rc/rules"
+
+# Multi theme section
+[themes]
+
+    [theme]
+        # My sexy beautiful and amazing theme
+        name = "greygreen"
+	font = "-misc-ohsnap-medium-r-normal--12-87-100-100-c-70-iso8859-1"
+        # font = "-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso8859-1"
+        # Bars
+        bars_width = 19
+        bars_fg = "#CCCCCC"
+        bars_bg = "#111111"
+        # Element tags
+        tags_normal_fg = "#7D7D7D"
+        tags_normal_bg = "#222222"
+        #tags_normal_statusline = ""
+        tags_sel_fg = "#222222"
+        tags_sel_bg = "#BDE077"
+        #tags_sel_statusline = ""
+        tags_occupied_fg = "#CCCCCC"
+        tags_occupied_bg = "#444444"
+        #tags_occupied_statusline = "*"
+        tags_urgent_fg = "#7D7D7D"
+        tags_urgent_bg = "#FDA53C"
+        tags_urgent_statusline = "\R[0;11;20;1;#CC0000]\R[0;0;20;1;#CC0000]"
+        tags_border_color = "#222222"
+        tags_border_width = 0
+        # Frame / Client
+        client_normal_fg = "#3C3C3C"
+        client_normal_bg = "#1C1C1C"
+        client_normal_statusline = "\s[right;#FDA53C; ··· Off ]"
+        client_sel_fg = "#BBBBBB"
+        client_sel_bg = "#242424"
+        client_sel_statusline = "\s[left;#BDE077; ···] \s[right;#BDE077;··· Actif ]"
+        frame_bg = "#FFFFFF"
+        client_titlebar_width = 14
+        client_border_width = 1
+    [/theme]
+
+  [theme]
+        name = "blue"
+        font = "-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso8859-1"
+        # Bars
+        bars_width = 12
+        bars_fg = "#63b8ff"
+        bars_bg = "#222222"
+        # Element tags
+        tags_normal_fg = "#7D7D7D"
+        tags_normal_bg = "#222222"
+        #tags_normal_statusline = ""
+        tags_sel_fg = "#222222"
+        tags_sel_bg = "#63b8ff"
+        #tags_sel_statusline = ""
+        tags_occupied_fg = "#7D7D7D"
+        tags_occupied_bg = "#1A1A1A"
+        tags_occupied_statusline = "\R[0;11;20;1;#63b8ff]"
+        tags_urgent_fg = "#7D7D7D"
+        tags_urgent_bg = "#1A1A1A"
+        tags_urgent_statusline = "\R[0;11;20;1;#CC0000]\R[0;1;20;1;#CC0000]"
+        tags_border_color = "#222222"
+        tags_border_width = 0
+        # Frame / Client
+        client_normal_fg = "#7D7D7D"
+        client_normal_bg = "#222222"
+        client_normal_statusline = "\s[3;9;#7D7D7D;#](1;client_close)"
+        client_sel_fg = "#222222"
+        client_sel_bg = "#63b8ff"
+        client_sel_statusline = "\s[3;9;#222222;#](1;client_close)"
+        frame_bg = "#63b8ff"
+        client_titlebar_width = 18
+        client_border_width = 1
+  [/theme]
+
+  [theme]
+     # No name mean default
+     name = "default"
+     font = "fixed"
+
+     # Bars
+     bars_width = 20
+     bars_fg = "#CCCCCC"
+     bars_bg = "#111111"
+
+     # Element tags
+     tags_normal_fg = "#CCCCCC"
+     tags_normal_bg = "#111111"
+     # tags_normal_statusline = ""
+
+     tags_sel_fg    = "#223322"
+     tags_sel_bg    = "#AABBAA"
+     # tags_sel_statusline = ""
+
+     tags_occupied_fg = "#AABBAA"
+     tags_occupied_bg = "#445544"
+     tags_occupied_statusline = "\R[0;0;100;1;#AABBAA]"
+
+     tags_urgent_fg    = "#223322"
+     tags_urgent_bg    = "#CC5544"
+     tags_urgent_statusline = "Gérard t'appelle !"
+
+     tags_border_color = "#112211"
+     tags_border_width = 0
+
+     # Frame / Client
+     client_normal_fg = "#1C1C1C"
+     client_normal_bg = "#1C1C1C"
+     #client_normal_statusline = ""
+
+     client_sel_fg = "#555555"
+     client_sel_bg = "#555555"
+     #client_sel_statusline = ""
+
+     # client_free_statusline = ""
+
+     frame_bg = "#1C1C1C"
+     client_titlebar_width = 10
+     client_border_width = 1
+
+   [/theme]
+
+[/themes]
+
+[bars]
+
+  # Position:
+  #
+  # 0  Top
+  # 1  Bottom
+  # 2  Hide
+
+  # Element type:
+  #
+  # t  Tags
+  # s  Statustext (will take available space)
+  # y  Systray (can be set only ONE time among all element)
+  # l  Launcher (will be expended at launcher use)
+
+  [bar]
+     name = testbar
+     position = 0
+     screen = 0
+     elements = "tlsy"   # element order in bar
+     theme = "greygreen"
+  [/bar]
+
+  [bar]
+     name = bottom
+     position = 1
+     screen = 0
+     elements = "s"   # element order in bar
+     theme = "greygreen"
+  [/bar]
+
+
+# [bar]
+#    position = 0
+#    screen = 1
+#    elements = "ts"
+#    theme = "default"
+# [/bar]
+
+[/bars]
+
+[tags]
+
+  # Use no screen option or screen = -1 to set tag on each screen
+  [tag]
+      screen = -1
+      name = " 1 Hep "
+      # statusline=""
+  [/tag]
+
+  [tag] name = " 2 Média " [/tag]
+  [tag] name = " 3 Web " [/tag]
+  [tag] name = " 4 Mi " [/tag]
+  [tag] name = " 5 " [/tag]
+  [tag] name = " 6 " [/tag]
+  [tag] name = " 7 " [/tag]
+  [tag] name = " 8 " [/tag]
+  [tag] name = " 9 " [/tag]
+  [tag] name = " 10 " [/tag]
+
+
+  # Mousebinds associated to Tags element button
+  [mouse] button = "1" func = "tag_click" [/mouse]
+  [mouse] button = "4" func = "tag_next"  [/mouse]
+  [mouse] button = "5" func = "tag_prev"  [/mouse]
+
+
+[/tags]
+
+[client]
+
+  theme = "greygreen"
+  key_modifier = "Super"
+
+  [mouse] button = "1" func = "client_focus_click"    [/mouse]
+  [mouse] button = "1" func = "mouse_swap"            [/mouse]
+  [mouse] button = "2" func = "mouse_tab"             [/mouse]
+  [mouse] button = "3" func = "mouse_resize"          [/mouse]
+  [mouse] button = "4" func = "client_focus_next_tab" [/mouse]
+  [mouse] button = "5" func = "client_focus_prev_tab" [/mouse]
+
+[/client]
+
+#[rules]
+#
+#  [rule]
+#      instance = "chromium"
+#
+#      # role   = ""
+#      # name   = ""
+#      # theme  = "default"
+#
+#      tag    = 1  # 2nd tag
+#      screen = 0
+#
+#      free       = false
+#      tab        = false
+#      ignore_tag = false
+#  [/rule]
+#
+#[/rules]
+
+[launchers]
+
+  # command can be an uicb function or an uicb function + extension (see example)
+  [launcher]
+     name = "exec"
+     prompt = "Run:"
+
+     # Example of uicb + ext:
+     #   command = "spawn xterm -e"
+     command = "spawn"
+
+     width = 150
+  [/launcher]
+
+[/launchers]
+
+[keys]
+
+  [key] mod = {"Super"} key = "Return" func = "spawn" cmd = "urxvt || xterm" [/key]
+
+  [key] mod = {"Control", "Alt"} key = "q" func = "quit" [/key]
+  [key] mod = {"Control", "Alt"} key = "r" func = "reload" [/key]
+
+  # Tag manipulation
+  [key] mod = {"Super"} key = "F1" func = "tag_set" cmd = "0" [/key]
+  [key] mod = {"Super"} key = "F2" func = "tag_set" cmd = "1" [/key]
+  [key] mod = {"Super"} key = "F3" func = "tag_set" cmd = "2" [/key]
+  [key] mod = {"Super"} key = "F4" func = "tag_set" cmd = "3" [/key]
+  [key] mod = {"Super"} key = "F5" func = "tag_set" cmd = "4" [/key]
+  [key] mod = {"Super"} key = "F6" func = "tag_set" cmd = "5" [/key]
+  [key] mod = {"Super"} key = "F7" func = "tag_set" cmd = "6" [/key]
+  [key] mod = {"Super"} key = "F8" func = "tag_set" cmd = "7" [/key]
+  [key] mod = {"Super"} key = "F9" func = "tag_set" cmd = "8" [/key]
+  [key] mod = {"Super"} key = "F10" func = "tag_set" cmd = "9" [/key]
+
+
+  [key] mod = {"Super", "Shift"} key = "F1" func = "tag_client" cmd = "0" [/key]
+  [key] mod = {"Super", "Shift"} key = "F2" func = "tag_client" cmd = "1" [/key]
+  [key] mod = {"Super", "Shift"} key = "F3" func = "tag_client" cmd = "2" [/key]
+  [key] mod = {"Super", "Shift"} key = "F4" func = "tag_client" cmd = "3" [/key]
+  [key] mod = {"Super", "Shift"} key = "F5" func = "tag_client" cmd = "4" [/key]
+  [key] mod = {"Super", "Shift"} key = "F6" func = "tag_client" cmd = "5" [/key]
+  [key] mod = {"Super", "Shift"} key = "F7" func = "tag_client" cmd = "6" [/key]
+  [key] mod = {"Super", "Shift"} key = "F8" func = "tag_client" cmd = "7" [/key]
+
+  [key] mod = {"Super"} key = "minus" func = "tag_del" [/key]
+  [key] mod = {"Super", "Shift"} key = "minus" func = "tag_new" [/key]
+
+  # tag function: cmd = nameofthetag
+  #[key] mod = {"Super"} key = "z" func = "tag" cmd = "2" [/key]
+
+  [key] mod = {"Control"} key = "Right" func = "tag_next" [/key]
+  [key] mod = {"Control"} key = "Left"  func = "tag_prev" [/key]
+
+  [key] mod = {"Control"} key = "Up"  func = "screen_next" [/key]
+  [key] mod = {"Control"} key = "Down" func = "screen_prev" [/key]
+
+  [key] mod = {"Super"} key = "q" func = "client_close" [/key]
+
+  # Focus next / prev client and next / prev tabbed client
+  [key] mod = { "Alt" }            key = "Tab" func = "client_focus_next" [/key]
+  [key] mod = { "Alt", "Shift" }   key = "Tab" func = "client_focus_prev" [/key]
+  [key] mod = { "Super" }          key = "Tab" func = "client_focus_next_tab" [/key]
+  [key] mod = { "Super", "Shift" } key = "Tab" func = "client_focus_prev_tab" [/key]
+
+  # Focus next client with direction
+  [key] mod = {"Shift"} key = "Left" func = "client_focus_left"   [/key]
+  [key] mod = {"Shift"} key = "Right" func = "client_focus_right"  [/key]
+  [key] mod = {"Shift"} key = "Up" func = "client_focus_top"    [/key]
+  [key] mod = {"Shift"} key = "Down" func = "client_focus_bottom" [/key]
+
+  # swap next client with direction:
+  [key] mod = {"Control", "Shift"} key = "Left" func = "client_swap_left"   [/key]
+  [key] mod = {"Control", "Shift"} key = "Right" func = "client_swap_right"  [/key]
+  [key] mod = {"Control", "Shift"} key = "Up" func = "client_swap_top"    [/key]
+  [key] mod = {"Control", "Shift"} key = "Down" func = "client_swap_bottom" [/key]
+
+  # Resize selected tiled client with direction
+  [key] mod = {"Super"} key = "Left" func = "client_resize_left"   cmd = "20" [/key]
+  [key] mod = {"Super"} key = "Right" func = "client_resize_left"   cmd = "-20" [/key]
+  [key] mod = {"Super"} key = "Up" func = "client_resize_top"    cmd = "20" [/key]
+  [key] mod = {"Super"} key = "Down" func = "client_resize_top"    cmd = "-20" [/key]
+  [key] mod = {"Super", "Control"} key = "Left" func = "client_resize_right"  cmd = "-20" [/key]
+  [key] mod = {"Super", "Control"} key = "Right" func = "client_resize_right"  cmd = "20" [/key]
+  [key] mod = {"Super", "Control"} key = "Up" func = "client_resize_bottom" cmd = "-20" [/key]
+  [key] mod = {"Super", "Control"} key = "Down" func = "client_resize_bottom" cmd = "20" [/key]
+
+  # Tabbing command
+  [key] mod = {"Alt", "Shift"} key = "h" func = "client_tab_left"   [/key]
+  [key] mod = {"Alt", "Shift"} key = "l" func = "client_tab_right"  [/key]
+  [key] mod = {"Alt", "Shift"} key = "k" func = "client_tab_top"    [/key]
+  [key] mod = {"Alt", "Shift"} key = "j" func = "client_tab_bottom" [/key]
+  [key] mod = {"Alt", "Shift"} key = "u" func = "client_untab" [/key]
+  [key] mod = {"Super"}        key = "t" func = "client_tab_next_opened" [/key]
+
+  # Layout manipulation
+  [key] mod = {"Super"}          key = "m" func = "layout_vmirror" [/key]
+  [key] mod = {"Super", "Shift"} key = "m" func = "layout_hmirror" [/key]
+  [key] mod = {"Super"}          key = "r" func = "layout_rotate_right" [/key]
+  [key] mod = {"Super", "Shift"} key = "r" func = "layout_rotate_left" [/key]
+
+  [key] mod = {"Control", "Super", "Alt"} key = "Left" func = "layout_integrate_left" [/key]
+  [key] mod = {"Control", "Super", "Alt"} key = "Down" func = "layout_integrate_bottom" [/key]
+  [key] mod = {"Control", "Super", "Alt"} key = "Up" func = "layout_integrate_top" [/key]
+  [key] mod = {"Control", "Super", "Alt"} key = "Right" func = "layout_integrate_right" [/key]
+
+  # Layout set historic travelling function (TESTING)
+  [key] mod = {"Super"} key = "o" func = "layout_prev_set" [/key]
+  [key] mod = {"Super", "Shift"} key = "o" func = "layout_next_set" [/key]
+
+  # Toggle client free/tile
+  [key] mod = {"Super"} key = "f" func = "client_toggle_free" [/key]
+
+  # Launcher
+  [key] mod = {"Super"} key = "p" func = "launcher" cmd = "exec" [/key]
+
+[/keys]

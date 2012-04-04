@@ -1,0 +1,53 @@
+
+[rules]
+       # Example of rule for MPlayer
+       [rule]
+               instance      = "xv"       # First part of WM_CLASS
+               class         = "MPlayer"  # Seconf part of WM_CLASS, not needed if first part is correct
+               # role        = ""         # WM_WINDOW_ROLE
+               screen        = 0          # Screen to use
+               tag           = 1          # Tag number of apps
+               free          = true       # Set automatic free client
+               max           = false      # Set automatic maximized client
+               follow_client = false      # follow the client
+               ignore_tags   = false      # ignore tag (free mode)
+       [/rule]
+
+       [rule]
+               instance      = "mutt"		# Première partie de WM_CLASS
+               class         = "mutt"		# Seconde partie de  WM_CLASS
+               screen        = 0		# Écran 
+               tag           = 0
+               free          = false		# Mode free (true/false)
+               max           = false		# Client maximisé (true/false)
+               follow_client = true		# Suivre le client (true/false)
+               ignore_tags   = false		# ignorer le layout du tag (mode free)
+       [/rule]
+
+       [rule]
+	       instance      = "mocp"
+               class         = "mocp"
+               screen        = 0
+               tag           = 1
+               follow_client = true
+               ignore_tags   = false
+       [/rule]
+
+       [rule]
+               instance      = "Navigator"
+               class         = "Firefox"
+               screen        = 0
+               tag           = 2
+               follow_client = true
+               ignore_tags   = false
+       [/rule]
+
+       [rule]
+               instance      = "skype"
+               class         = "Skype"
+               screen        = 0
+               tag           = 4
+               follow_client = true
+               ignore_tags   = false
+       [/rule]
+[/rules]
