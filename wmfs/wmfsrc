@@ -105,7 +105,7 @@
 
      tags_urgent_fg    = "#223322"
      tags_urgent_bg    = "#CC5544"
-     tags_urgent_statusline = "Gérard t'appelle !"
+     # tags_urgent_statusline = "*"
 
      tags_border_color = "#112211"
      tags_border_width = 0
