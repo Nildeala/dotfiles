@@ -23,14 +23,8 @@ color8 FF95D1 #rose
 
  
 TEXT
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/clock.png] ^s[right;\#BBBBBB; Uptime:] ^s[right;\#BDE077; $uptime_short]\
-^s[right;\#444444;   |   ]\
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/fs_01.png] ^s[right;\#BBBBBB; HDD:] ^s[right;\#A6D4E0; ${fs_used_perc /}% ] ^p[right;8;10;0;${fs_used_perc /};100;\#445544;\#A6D4E0;ckyhdd](1;spawn;urxvt -e df -h)\
-^s[right;\#444444;   |   ]\
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/ship.png] ^s[right;\#BBBBBB; Kernel:] ^s[right;\#FDA53C; $kernel]\
-^s[right;\#444444;   |   ]\
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/netdown.png] ^s[right;\#BBBBBB; IP:] ^s[right;\#E8DD9E; ${addr wlan0}](1;spawn;urxvt -e wicd-curses)\
-^s[right;\#444444;   |   ]\
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/spkr_01.png] ^s[right;\#BBBBBB; Volume: ] ^s[right;\#A6D4E0;${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"%} ](1;spawn;urxvt -e alsamixer)  ^p[right;8;10;0;${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"};100;\#445544;\#A6D4E0;ckyhdd](1;spawn;urxvt -e alsamixer)\
-^s[right;\#444444;   |   ]\
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/clock.png]\ ^s[right;\#CCCCCC; ${time %a %d %b}] ^s[right;\#A6D4E0; ${time %H:%M}   ]\
+^s[right;\#BBBBBB; Uptime:] ^s[right;\#BDE077; $uptime_short   ]\
+^i[right;0;0;/home/william/.config/wmfs/icons/stat/clock.png]\
+^s[right;\#666666;  LOCAL ]^s[right;\#EEEEEE;${time %A %e %B %Y}] ^s[right;\#A6D4E0; ${time %R}] ^s[right;\#D8ADFF; ${time %Z %z}]\
+^s[right;\#666666;  ·  PARIS ]^s[right;\#A6D4E0;${tztime Europe/Paris %R}]^s[right;\#D8ADFF; ${tztime Europe/Paris %Z %z}]\
+^s[right;\#666666;  ·  UTC ]^s[right;\#A6D4E0;${utime %R}  ]\
