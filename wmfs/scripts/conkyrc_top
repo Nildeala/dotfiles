@@ -23,8 +23,11 @@ color8 FF95D1 #rose
 
  
 TEXT
-^s[right;\#BBBBBB; Uptime:] ^s[right;\#BDE077; $uptime_short   ]\
+^s[left;\#BBBBBB;   ]^i[left;0;0;/home/william/.config/wmfs/icons/stat/netup.png]^s[left;\#E8DD9E; ${upspeedf wlan0}Kb](1;spawn;urxvt -e wicd-curses)\
+^s[left;\#555555;  ]\
+^i[left;0;0;/home/william/.config/wmfs/icons/stat/netdown.png]^s[left;\#E8DD9E; ${downspeedf wlan0}Kb](1;spawn;urxvt -e wicd-curses)\
+^s[right;\#666666; UPTIME ]^s[right;\#edb36f;$uptime_short  ]\
 ^i[right;0;0;/home/william/.config/wmfs/icons/stat/clock.png]\
-^s[right;\#666666;  LOCAL ]^s[right;\#EEEEEE;${time %A %e %B %Y}] ^s[right;\#A6D4E0; ${time %R}] ^s[right;\#D8ADFF; ${time %Z %z}]\
-^s[right;\#666666;  ·  PARIS ]^s[right;\#A6D4E0;${tztime Europe/Paris %R}]^s[right;\#D8ADFF; ${tztime Europe/Paris %Z %z}]\
-^s[right;\#666666;  ·  UTC ]^s[right;\#A6D4E0;${utime %R}  ]\
+^s[right;\#666666;  LOCAL ]^s[right;\#8998a1;${time %A %e %B %Y}] ^s[right;\#EEEEEE; ${time %R}] ^s[right;\#4a9b6c; ${time %Z %z}]\
+^s[right;\#666666;  ·  PARIS ]^s[right;\#EEEEEE;${tztime Europe/Paris %R}]^s[right;\#4a9b6c; ${tztime Europe/Paris %Z %z}]\
+^s[right;\#666666;  ·  UTC ]^s[right;\#EEEEEE;${utime %R}  ]\

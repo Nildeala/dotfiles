@@ -18,29 +18,29 @@
         # Bars
         bars_width = 19
         bars_fg = "#CCCCCC"
-        bars_bg = "#111111"
+        bars_bg = "#000000"
         # Element tags
         tags_normal_fg = "#7D7D7D"
-        tags_normal_bg = "#222222"
+        tags_normal_bg = "#111111"
         #tags_normal_statusline = ""
-        tags_sel_fg = "#222222"
-        tags_sel_bg = "#BDE077"
+        tags_sel_fg = "#FFFFFF"
+        tags_sel_bg = "#0387db"
         #tags_sel_statusline = ""
         tags_occupied_fg = "#CCCCCC"
-        tags_occupied_bg = "#444444"
+        tags_occupied_bg = "#333333"
         #tags_occupied_statusline = "*"
         tags_urgent_fg = "#7D7D7D"
         tags_urgent_bg = "#FDA53C"
-        tags_urgent_statusline = "\R[0;11;20;1;#CC0000]\R[0;0;20;1;#CC0000]"
+        tags_urgent_statusline = "\s[right;#CC0000; Owo!]"
         tags_border_color = "#222222"
         tags_border_width = 0
         # Frame / Client
         client_normal_fg = "#3C3C3C"
-        client_normal_bg = "#1C1C1C"
+        client_normal_bg = "#000000"
         client_normal_statusline = "\s[right;#FDA53C; ··· Off ]"
         client_sel_fg = "#BBBBBB"
-        client_sel_bg = "#242424"
-        client_sel_statusline = "\s[left;#BDE077; ···] \s[right;#BDE077;··· Actif ]"
+        client_sel_bg = "#000000"
+        client_sel_statusline = "\s[right;#BDE077;··· Actif ]"
         frame_bg = "#FFFFFF"
         client_titlebar_width = 14
         client_border_width = 1
@@ -105,7 +105,7 @@
 
      tags_urgent_fg    = "#223322"
      tags_urgent_bg    = "#CC5544"
-     # tags_urgent_statusline = "*"
+     tags_urgent_statusline = "Gérard t'appelle !"
 
      tags_border_color = "#112211"
      tags_border_width = 0
@@ -175,19 +175,19 @@
   # Use no screen option or screen = -1 to set tag on each screen
   [tag]
       screen = -1
-      name = " 1 Hep "
+      name = "1"
       # statusline=""
   [/tag]
 
-  [tag] name = " 2 Média " [/tag]
-  [tag] name = " 3 Web " [/tag]
-  [tag] name = " 4 Mi " [/tag]
-  [tag] name = " 5 " [/tag]
-  [tag] name = " 6 " [/tag]
-  [tag] name = " 7 " [/tag]
-  [tag] name = " 8 " [/tag]
-  [tag] name = " 9 " [/tag]
-  [tag] name = " 10 " [/tag]
+  [tag] name = "2" [/tag]
+  [tag] name = "3" [/tag]
+  [tag] name = "4" [/tag]
+  [tag] name = "5" [/tag]
+  [tag] name = "6" [/tag]
+  [tag] name = "7" [/tag]
+  [tag] name = "8" [/tag]
+  [tag] name = "9" [/tag]
+  [tag] name = "10" [/tag]
 
 
   # Mousebinds associated to Tags element button
@@ -236,7 +236,7 @@
   # command can be an uicb function or an uicb function + extension (see example)
   [launcher]
      name = "exec"
-     prompt = "Run:"
+     prompt = " Run:"
 
      # Example of uicb + ext:
      #   command = "spawn xterm -e"

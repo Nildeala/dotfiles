@@ -6,63 +6,59 @@ total_run_times 0
 no_buffers yes
 
 default_color FFFFFF #blanc
-default_shade_color 333333
+default_shade_color 111111
 default_outline_color black
 
 use_xft yes
 
 color0 EEEEEE #normal
 color1 B3B3B3 #gris
-color2 FDA53C #orange
+color2 edb36f #orange
 color3 E8DD9E #jaune
-color4 A6D4E0 #bleu
+color4 0387db #bleu
 color5 FFA500 #camel
-color6 BDE077 #vert
-color7 D8ADFF #mauve
+color6 6f9f09 #vert
+color7 4FB5DB #mauve
 color8 FF95D1 #rose
 
  
 TEXT
-^s[left;\#BBBBBB;  ]\
+^s[left;\#333333;  ]\
 ^i[left;0;0;/home/william/.config/wmfs/icons/stat/spkr_01.png]\
-^s[left;\#BBBBBB; +](1;spawn; amixer -c 0 set Master 5+ unmute)^s[left;\#BBBBBB; -](1;spawn; amixer -c 0 set Master 5- unmute) ^s[left;\#D8ADFF; ${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"%} ](1;spawn; amixer sset Master toggle) ^p[left;70;10;2;${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"};100;\#333333;\#D8ADFF;vol](1;spawn; urxvt -e alsamixer)\
+^s[left;\#BBBBBB; +](1;spawn; amixer -c 0 set Master 5+ unmute)^s[left;\#BBBBBB; -](1;spawn; amixer -c 0 set Master 5- unmute) ^s[left;\#4a9b6c; ${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"%} ](1;spawn; amixer sset Master toggle) ^p[left;70;10;1;${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"};100;\#111111;\#4a9b6c;vol](1;spawn; urxvt -e alsamixer)\
 ^s[left;\#555555;  ·  ]\
-^i[left;0;0;/home/william/.config/wmfs/icons/stat/mem.png]^s[left;\#666666; $memmax]^s[left;\#BDE077; $memperc% ]^p[left;80;10;2;$memperc;100;\#333333;\#BDE077;ckymem](1;spawn;urxvt -e htop)\
+^i[left;0;0;/home/william/.config/wmfs/icons/stat/mem.png]^s[left;\#666666; $memmax]^s[left;\#0387db; $memperc% ]^p[left;80;10;1;$memperc;100;\#111111;\#0387db;ckymem](1;spawn;urxvt -e htop)\
+^s[left;\#555555;   ]\
+^i[left;0;0;/home/william/.config/wmfs/icons/stat/cpu.png]^s[left;\#0387db; ${cpu}% ] ^p[left;80;10;1;${cpu};100;\#111111;\#0387db;ckycpu]\
 ^s[left;\#555555;  ·  ]\
-^i[left;0;0;/home/william/.config/wmfs/icons/stat/cpu.png]^s[left;\#A6D4E0; ${cpu}% ] ^p[left;80;10;2;${cpu};100;\#333333;\#A6D4E0;ckycpu]\
-^s[left;\#555555;  ·  ]\
-^i[left;0;0;/home/william/.config/wmfs/icons/stat/fs_01.png]^s[left;\#666666; /HOME ${fs_size /home}]^s[left;\#FDA53C; ${fs_used_perc /home}% ]^p[left;80;10;2;${fs_used_perc /home};100;\#333333;\#FDA53C;fshome] ^s[left;\#666666;  / ${fs_size /}]^s[left;\#FDA53C; ${fs_used_perc /}% ]^p[left;80;10;2;${fs_used_perc /};100;\#333333;\#FDA53C;fsroot]\
-^s[left;\#555555;  ·  ]\
-^i[left;0;0;/home/william/.config/wmfs/icons/stat/netup.png]^s[left;\#E8DD9E; ${upspeedf wlan0}Kb](1;spawn;urxvt -e wicd-curses)\
-^s[left;\#555555;  ]\
-^i[left;0;0;/home/william/.config/wmfs/icons/stat/netdown.png]^s[left;\#E8DD9E; ${downspeedf wlan0}Kb](1;spawn;urxvt -e wicd-curses)\
+^i[left;0;0;/home/william/.config/wmfs/icons/stat/fs_01.png]^s[left;\#666666; /HOME ${fs_size /home}]^s[left;\#edb36f; ${fs_used_perc /home}% ]^p[left;80;10;1;${fs_used_perc /home};100;\#111111;\#edb36f;fshome] ^s[left;\#666666;  / ${fs_size /}]^s[left;\#edb36f; ${fs_used_perc /}% ]^p[left;80;10;1;${fs_used_perc /};100;\#111111;\#edb36f;fsroot]\
 \
 \
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/note.png](1;spawn;urxvt -e mocp)^s[right;\#BBBBBB;  ](1;spawn;urxvt -e mocp)\
+^i[right;0;0;/home/william/.config/wmfs/icons/stat/note.png](1;spawn;urxvt -e mocp)^s[right;\#333333;  ](1;spawn;urxvt -e mocp)\
 \
 ${if_running mocp}\
 ${if_match "${exec mocp -Q %state}" != "STOP"}\
-^s[right;\#D8ADFF; ${exec mocp -Q %artist}]\
-^s[right;\#D8ADFF; - ${exec mocp -Q %song}]\
+^s[right;\#0387db; ${exec mocp -Q %artist}]\
+^s[right;\#0387db; - ${exec mocp -Q %song}]\
 $endif\
 ${if_match "${exec mocp -Q %state}" != "STOP"}\
 ^s[right;\#555555;  ·  ]\
 $endif\
 ${if_match "${exec mocp -Q %state}" == "PLAY"}\
-^s[right;\#BDE077;Lecture  ]\
+^s[right;\#4a9b6c;Lecture  ]\
 $endif\
 ${if_match "${exec mocp -Q %state}" == "PAUSE"}\
-^s[right;\#FDA53C;Pause  ]\
+^s[right;\#edb36f;Pause  ]\
 $endif\
 ${if_match "${exec mocp -Q %state}" == "STOP"}\
-^s[right;\#D8ADFF;Arrêt  ]\
+^s[right;\#0387db;Arrêt  ]\
 $endif\
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/previous.png](1;spawn;mocp -r)^s[right;\#BBBBBB;  ]\
+^i[right;0;0;/home/william/.config/wmfs/icons/stat/previous.png](1;spawn;mocp -r)^s[right;\#333333;  ]\
 ${if_match "${exec mocp -Q %state}" == "PLAY"}\
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/pause.png](1;spawn;mocp -G)^s[right;\#BBBBBB;  ]\
+^i[right;0;0;/home/william/.config/wmfs/icons/stat/pause.png](1;spawn;mocp -G)^s[right;\#333333;  ]\
 $else\
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/play.png](1;spawn;mocp -p)^s[right;\#BBBBBB;  ]\
+^i[right;0;0;/home/william/.config/wmfs/icons/stat/play.png](1;spawn;mocp -G)^s[right;\#333333;  ]\
 $endif\
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/next.png](1;spawn;mocp -f)^s[right;\#BBBBBB;  ]\
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/stop.png](1;spawn;mocp -s)^s[right;\#BBBBBB;  ]\
+^i[right;0;0;/home/william/.config/wmfs/icons/stat/next.png](1;spawn;mocp -f)^s[right;\#333333;  ]\
+^i[right;0;0;/home/william/.config/wmfs/icons/stat/stop.png](1;spawn;mocp -s)^s[right;\#333333;  ]\
 $endif\
