@@ -34,31 +34,30 @@ TEXT
 ^i[left;0;0;/home/william/.config/wmfs/icons/stat/fs_01.png]^s[left;\#666666; /HOME ${fs_size /home}]^s[left;\#edb36f; ${fs_used_perc /home}% ]^p[left;80;10;1;${fs_used_perc /home};100;\#111111;\#edb36f;fshome] ^s[left;\#666666;  / ${fs_size /}]^s[left;\#edb36f; ${fs_used_perc /}% ]^p[left;80;10;1;${fs_used_perc /};100;\#111111;\#edb36f;fsroot]\
 \
 \
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/note.png](1;spawn;urxvt -e mocp)^s[right;\#333333;  ](1;spawn;urxvt -e mocp)\
+^i[right;0;0;/home/william/.config/wmfs/icons/stat/note.png](1;spawn;urxvt -e ncmpcpp)^s[right;\#333333;  ](1;spawn;urxvt -e ncmpcpp)\
 \
-${if_running mocp}\
-${if_match "${exec mocp -Q %state}" != "STOP"}\
-^s[right;\#0387db; ${exec mocp -Q %artist}]\
-^s[right;\#0387db; - ${exec mocp -Q %song}]\
+\
+${if_match "$mpd_status" != "Stopped"}\
+^s[right;\#0387db; ${mpd_title 30}]\
+^s[right;\#0387db; - ${mpd_artist 20}]\
 $endif\
-${if_match "${exec mocp -Q %state}" != "STOP"}\
+${if_match "$mpd_status" != "Stopped"}\
 ^s[right;\#555555;  ·  ]\
 $endif\
-${if_match "${exec mocp -Q %state}" == "PLAY"}\
-^s[right;\#4a9b6c;Lecture  ]\
+${if_match "$mpd_status" == "Playing"}\
+^s[right;\#4a9b6c;Lecture $mpd_percent%  ]\
 $endif\
-${if_match "${exec mocp -Q %state}" == "PAUSE"}\
-^s[right;\#edb36f;Pause  ]\
+${if_match "$mpd_status" == "Paused"}\
+^s[right;\#edb36f;Pause $mpd_percent%  ]\
 $endif\
-${if_match "${exec mocp -Q %state}" == "STOP"}\
+${if_match "$mpd_status" == "Stopped"}\
 ^s[right;\#0387db;Arrêt  ]\
 $endif\
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/previous.png](1;spawn;mocp -r)^s[right;\#333333;  ]\
-${if_match "${exec mocp -Q %state}" == "PLAY"}\
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/pause.png](1;spawn;mocp -G)^s[right;\#333333;  ]\
+^i[right;0;0;/home/william/.config/wmfs/icons/stat/previous.png](1;spawn;ncmpcpp prev)^s[right;\#333333;  ]\
+${if_match "$mpd_status" == "Playing"}\
+^i[right;0;0;/home/william/.config/wmfs/icons/stat/pause.png](1;spawn;ncmpcpp toggle)^s[right;\#333333;  ]\
 $else\
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/play.png](1;spawn;mocp -G)^s[right;\#333333;  ]\
+^i[right;0;0;/home/william/.config/wmfs/icons/stat/play.png](1;spawn;ncmpcpp toggle)^s[right;\#333333;  ]\
 $endif\
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/next.png](1;spawn;mocp -f)^s[right;\#333333;  ]\
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/stop.png](1;spawn;mocp -s)^s[right;\#333333;  ]\
-$endif\
+^i[right;0;0;/home/william/.config/wmfs/icons/stat/next.png](1;spawn;ncmpcpp next)^s[right;\#333333;  ]\
+^i[right;0;0;/home/william/.config/wmfs/icons/stat/stop.png](1;spawn;ncmpcpp stop)^s[right;\#333333;  ]\
