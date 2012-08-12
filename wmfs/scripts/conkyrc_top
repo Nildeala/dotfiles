@@ -28,13 +28,13 @@ ${if_match $memperc >= 89}\
 ^s[left;\#E95C59;$memperc% ]^p[left;10;10;0;$memperc;100;\#111111;\#E95C59;ckymem](1;spawn;urxvt -e htop)^s[left;\#E95C59; !]\
 $endif\
 \
-${if_match $memperc >= 45}\
+${if_match $memperc >= 50}\
 ${if_match $memperc <= 88}\
 ^s[left;\#edb36f;$memperc% ]^p[left;10;10;0;$memperc;100;\#111111;\#edb36f;ckymem](1;spawn;urxvt -e htop)\
 $endif\
 $endif\
 \
-${if_match $memperc <= 44}\
+${if_match $memperc <= 49}\
 ^s[left;\#4a9b6c;$memperc% ]^p[left;10;10;0;$memperc;100;\#111111;\#4a9b6c;ckymem](1;spawn;urxvt -e htop)\
 $endif\
 \
@@ -44,13 +44,13 @@ ${if_match $cpu >= 89}\
 ^s[left;\#E95C59;${cpu}% ] ^p[left;10;10;0;${cpu};100;\#111111;\#E95C59;ckycpu](1;spawn;urxvt -e htop)^s[left;\#E95C59; !]\
 $endif\
 \
-${if_match $cpu >= 45}\
+${if_match $cpu >= 50}\
 ${if_match $cpu <= 88}\
 ^s[left;\#edb36f;${cpu}% ] ^p[left;10;10;0;${cpu};100;\#111111;\#edb36f;ckycpu]\
 $endif\
 $endif\
 \
-${if_match $cpu <= 44}\
+${if_match $cpu <= 49}\
 ^s[left;\#4a9b6c;${cpu}% ] ^p[left;10;10;0;${cpu};100;\#111111;\#4a9b6c;ckycpu]\
 $endif\
 \
