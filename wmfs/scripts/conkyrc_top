@@ -23,11 +23,68 @@ color8 FF95D1 #rose
 
  
 TEXT
-^s[left;\#BBBBBB;   ]^i[left;0;0;/home/william/.config/wmfs/icons/stat/netup.png]^s[left;\#E8DD9E; ${upspeedf wlan0}Kb](1;spawn;urxvt -e wicd-curses)\
-^s[left;\#555555;  ]\
-^i[left;0;0;/home/william/.config/wmfs/icons/stat/netdown.png]^s[left;\#E8DD9E; ${downspeedf wlan0}Kb](1;spawn;urxvt -e wicd-curses)\
-^s[right;\#666666; UPTIME ]^s[right;\#edb36f;$uptime_short  ]\
-^i[right;0;0;/home/william/.config/wmfs/icons/stat/clock.png]\
-^s[right;\#666666;  LOCAL ]^s[right;\#8998a1;${time %A %e %B %Y}] ^s[right;\#EEEEEE; ${time %R}] ^s[right;\#4a9b6c; ${time %Z %z}]\
-^s[right;\#666666;  ·  PARIS ]^s[right;\#EEEEEE;${tztime Europe/Paris %R}]^s[right;\#4a9b6c; ${tztime Europe/Paris %Z %z}]\
-^s[right;\#666666;  ·  UTC ]^s[right;\#EEEEEE;${utime %R}  ]\
+^s[left;\#9270D1;  mem ]\
+${if_match $memperc >= 89}\
+^s[left;\#E95C59;$memperc% ]^p[left;10;10;0;$memperc;100;\#111111;\#E95C59;ckymem](1;spawn;urxvt -e htop)^s[left;\#E95C59; !]\
+$endif\
+\
+${if_match $memperc >= 45}\
+${if_match $memperc <= 88}\
+^s[left;\#edb36f;$memperc% ]^p[left;10;10;0;$memperc;100;\#111111;\#edb36f;ckymem](1;spawn;urxvt -e htop)\
+$endif\
+$endif\
+\
+${if_match $memperc <= 44}\
+^s[left;\#4a9b6c;$memperc% ]^p[left;10;10;0;$memperc;100;\#111111;\#4a9b6c;ckymem](1;spawn;urxvt -e htop)\
+$endif\
+\
+\
+^s[left;\#9270D1;   · cpu ]\
+${if_match $cpu >= 89}\
+^s[left;\#E95C59;${cpu}% ] ^p[left;10;10;0;${cpu};100;\#111111;\#E95C59;ckycpu](1;spawn;urxvt -e htop)^s[left;\#E95C59; !]\
+$endif\
+\
+${if_match $cpu >= 45}\
+${if_match $cpu <= 88}\
+^s[left;\#edb36f;${cpu}% ] ^p[left;10;10;0;${cpu};100;\#111111;\#edb36f;ckycpu]\
+$endif\
+$endif\
+\
+${if_match $cpu <= 44}\
+^s[left;\#4a9b6c;${cpu}% ] ^p[left;10;10;0;${cpu};100;\#111111;\#4a9b6c;ckycpu]\
+$endif\
+\
+\
+${if_up wlan0}\
+^s[left;\#9270d1;   · up/down]^s[left;\#8998a1; ${upspeedf wlan0}kb /]\
+^s[left;\#edb36f; ${downspeedf wlan0}kb]\
+$else\
+^s[left;\#cccccc; Aucune Connexion]\
+$endif\
+\
+\
+\
+\
+^s[right;\#9270D1;mpd ](1;spawn;urxvt -e ncmpcpp)\
+${if_match "$mpd_status" != "Stopped"}\
+^s[right;\#cccccc; ${mpd_title}]\
+^s[right;\#8998a1; - ${mpd_artist 20}  ]\
+$endif\
+${if_match "$mpd_status" == "Playing"}\
+^s[right;\#4a9b6c;> ${mpd_elapsed}/${mpd_length}](1;spawn;ncmpcpp toggle)\
+$endif\
+${if_match "$mpd_status" == "Paused"}\
+^s[right;\#edb36f;|| ${mpd_elapsed}/${mpd_length}](1;spawn;ncmpcpp toggle)\
+$endif\
+${if_match "$mpd_status" == "Stopped"}\
+^s[right;\#edb36f; arrêt](1;spawn;urxvt -e ncmpcpp)\
+$endif\
+\
+^s[right;\#9270D1;   · vol]\
+^s[right;\#4a9b6c; ${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"%} ](1;spawn; amixer sset Master toggle)\
+^p[right;10;10;0;${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"};100;\#111111;\#4a9b6c;vol](1;spawn; urxvt -e alsamixer)\
+\
+^s[right;\#9270D1;   · local]\
+^s[right;\#8998a1;  ${time %A %e %B %Y}] ^s[right;\#cccccc; ${time %R}]\
+^s[right;\#9270d1;   · utc ]^s[right;\#cccccc;${utime %R}]\
+^s[right;\#FFF;  ]\

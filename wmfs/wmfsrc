@@ -21,12 +21,12 @@
         bars_bg = "#000000"
         # Element tags
         tags_normal_fg = "#7D7D7D"
-        tags_normal_bg = "#111111"
+        tags_normal_bg = "#000000"
         #tags_normal_statusline = ""
         tags_sel_fg = "#FFFFFF"
-        tags_sel_bg = "#0387db"
+        tags_sel_bg = "#724c98"
         #tags_sel_statusline = ""
-        tags_occupied_fg = "#CCCCCC"
+        tags_occupied_fg = "#aaaaaa"
         tags_occupied_bg = "#333333"
         #tags_occupied_statusline = "*"
         tags_urgent_fg = "#7D7D7D"
@@ -37,7 +37,7 @@
         # Frame / Client
         client_normal_fg = "#3C3C3C"
         client_normal_bg = "#000000"
-        client_normal_statusline = "\s[right;#FDA53C; ··· Off ]"
+        client_normal_statusline = "\s[right;#FDA53C; ··· ]"
         client_sel_fg = "#BBBBBB"
         client_sel_bg = "#000000"
         client_sel_statusline = "\s[right;#BDE077;··· Actif ]"
@@ -76,7 +76,7 @@
         client_sel_bg = "#63b8ff"
         client_sel_statusline = "\s[3;9;#222222;#](1;client_close)"
         frame_bg = "#63b8ff"
-        client_titlebar_width = 18
+        client_titlebar_width = 1
         client_border_width = 1
   [/theme]
 
@@ -154,7 +154,7 @@
 
   [bar]
      name = bottom
-     position = 1
+     position = 2
      screen = 0
      elements = "s"   # element order in bar
      theme = "greygreen"
@@ -275,6 +275,8 @@
   [key] mod = {"Super", "Shift"} key = "F6" func = "tag_client" cmd = "5" [/key]
   [key] mod = {"Super", "Shift"} key = "F7" func = "tag_client" cmd = "6" [/key]
   [key] mod = {"Super", "Shift"} key = "F8" func = "tag_client" cmd = "7" [/key]
+  [key] mod = {"Super", "Shift"} key = "F9" func = "tag_client" cmd = "8" [/key]
+  [key] mod = {"Super", "Shift"} key = "F10" func = "tag_client" cmd = "9" [/key]
 
   [key] mod = {"Super"} key = "minus" func = "tag_del" [/key]
   [key] mod = {"Super", "Shift"} key = "minus" func = "tag_new" [/key]
@@ -347,4 +349,12 @@
   # Launcher
   [key] mod = {"Super"} key = "p" func = "launcher" cmd = "exec" [/key]
 
+  # Touches Multimédias
+  [key] key = "XF86AudioPlay" func = "spawn" cmd = "ncmpcpp toggle" [/key]
+  [key] key = "XF86AudioMute" func = "spawn" cmd = "amixer sset Master toggle" [/key]
+  [key] key = "XF86AudioLowerVolume" func = "spawn" cmd = "amixer -c 0 set Master 3- unmute" [/key]
+  [key] key = "XF86AudioRaiseVolume" func = "spawn" cmd = "amixer -c 0 set Master 3+ unmute" [/key]
+
+  # Notifications
+  [key] mod = {"Super"} key = "s" func = "spawn" cmd = "twmnc -c 'notifications ··· survoler et défiler pour parcourir' --bg '#525252'"[/key]
 [/keys]
