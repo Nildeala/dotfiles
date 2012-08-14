@@ -1,10 +1,10 @@
 # Some of my configuration files
 - - -
 
-apps configs :
+apps configs :  
 **ncmpcpp**, **wmfs** (*WMFS2*), **twmn** (notification daemon made for tiling window managers), **poezio** (my theme *limitfree.py*)
 
-dotfiles :
+dotfiles :  
 **.Xresources**.
 
 - - -
