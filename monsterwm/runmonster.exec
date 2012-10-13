@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+# First define colors
+norm_fg="#909090" # Light Gray
+norm_bg="#1a1a1a" # Black
+sel_fg="#303030" # Black
+sel_bg="#909090" # Light Gray
+err_fg="#ffffff"  # White
+err_bg="#f2777a"  # Red
+
+conky -c ~/bin/conkymonster | dzen2 -h 20 -w 1620 -x 300 -ta r -bg "#1a1a1a" -fg "#cccccc" -fn "-*-envypn-medium-*-*--13-*-*-*-*-*-*-1" &
+
+: "${wm:="monsterwm"}"
+: "${ff:="/tmp/monsterwm.fifo"}"
+
+[[ -p $ff ]] || mkfifo -m 600 "$ff"
+
+while read -t 2 -r wmout || true; do
+    # filter output to only what we want to match and parse
+    if [[ $wmout =~ ^(([[:digit:]]+:)+[[:digit:]]+ ?)+.*$ ]]; then
+        read -ra desktops <<< "$wmout" && unset r
+	    for desktop in "${desktops[@]}"; do
+				# set values for
+				# d - the desktop id
+				# w - number of windows in that desktop
+				# m - tiling layout/mode for that desktop
+				# c - whether that desktop is the current (1) or not (0)
+				# u - whether a window in that desktop has an urgent hint set (1) or not (0)
+				IFS=':' read -r d w m c u <<< "$desktop"
+				# Set the icon for desktops with windows
+				ic=" "
+                                ((w)) && ic=" *^fg(#dedede)"
+				# name each desktop
+				case $d in
+					0) d="u " ;;
+					1) d="d " ;;
+					2) d="t " ;;
+					3) d="q " ;;
+					4) d="c " ;;
+					5) d="sx " ;;
+					6) d="sp " ;;
+				esac
+				# we will also display the current desktop's tiling layout/mode
+				((c)) && fg="$sel_fg" bg="$sel_bg" && case $m in
+					# name each layout/mode with a symbol
+					0) i=" [T]" ;;
+					1) i=" [$w]" ;;
+ 					2) i=" [b]" ;;
+ 					3) i=" [G]" ;;
+ 					4) i=" [F]" ;;
+ 				esac || fg="$norm_fg" bg="$norm_bg"
+        			# if the desktop has an urgent hint its color should be err_fg/err_bg
+				((u)) && fg="$err_fg" bg="$err_bg"
+				# print the desktop name
+				r+="^bg($norm_bg)^bg($bg)^fg($fg)$ic$d^fg($norm_fg)^bg($norm_bg)"
+	    done
+    fi
+    printf "%s%s\n" "$r" "$i" 
+done < "$ff" | dzen2 -fg "#cccccc" -bg "#1a1a1a" -h 20 -fn "-*-envypn-medium-*-*--13-*-*-*-*-*-*-1" -ta l -w 300 &
+
+while :; do "$wm" || break; done | tee -a "$ff"
