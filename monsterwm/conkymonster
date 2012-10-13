@@ -1,0 +1,64 @@
+out_to_console yes
+out_to_x no
+background yes
+update_interval 1
+total_run_times 0
+no_buffers yes
+
+default_color FFFFFF #blanc
+default_shade_color 333333
+default_outline_color black
+
+use_xft yes
+ 
+TEXT
+\
+${if_running pacman}^fg(\#f99157)pacman ^fg(\#dedede)actif     $endif\
+\
+${if_running mplayer}\
+^fg(\#777)mplayer ^fg(\#99cc99)> ^fg(\#dedede)lecture\
+     $endif\
+\
+${if_match "$mpd_status" != "Stopped"}\
+^fg(\#777777)$mpd_elapsed/$mpd_length\
+${if_match "$mpd_status" == "Playing"} ^fg(\#99cc99)> $endif\
+${if_match "$mpd_status" == "Paused"} ^fg(\#f99157)= $endif\
+^fg(\#dedede)${mpd_smart 70}     $endif\
+\
+\
+${if_running skype}^fg(\#6699cc)skype ^fg(\#dedede)actif     $endif\
+\
+${if_up wlan0}$else\
+^fg(\#dedede)netcfg /!\ ^fg(\#f2777a)aucune connexion réseau     \
+$endif\
+\
+${if_match $cpu >= 80}\
+^fg(\#777)cpu ^fg(\#f2777a)$cpu%  \
+$else\
+^fg(\#777)cpu ^fg(\#dedede)$cpu%  \
+$endif\
+\
+${if_match $memperc >= 80}\
+^fg(\#777)mem ^fg(\#f2777a)$memperc%  \
+$else\
+^fg(\#777)mem ^fg(\#dedede)$memperc%  \
+$endif\
+\
+\
+${if_match ${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"} >= 71}\
+^fg(\#777)vol ^fg(\#99cc99)${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"}%     \
+$endif\
+\
+${if_match ${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"} >= 41}\
+${if_match ${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"} <= 70}\
+^fg(\#777)vol ^fg(\#dedede)${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"}%     \
+$endif\
+$endif\
+\
+${if_match ${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"} <= 40}\
+^fg(\#777)vol ^fg(\#f2777a)${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"}%     \
+$endif\
+\
+\
+^fg(\#777)${time %A %e %B %Y} ^fg(\#dedede)${time %R}  \
+^fg(\#777)utc ^fg(\#dedede)${utime %R}  \
