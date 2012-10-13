@@ -1,7 +1,7 @@
 # Some of my configuration files
 - - -
 
-Windows Managers configs :
+Windows Managers configs :  
 [**WMFS²**](http://wmfs.info), [**MonsterWM**](https://github.com/c00kiemon5ter/monsterwm)
 
 apps configs :  
@@ -13,7 +13,7 @@ dotfiles :
 - - -
 
 ### Last MonsterWM Desktop (October 2012)
-[**October 2012 Screenshot**](https://github.com/Schoewilliam/configs/blob/master/screenshots/october2012.png)
+[**October 2012 Screenshot**](https://github.com/Schoewilliam/configs/blob/master/screenshots/octobre2012.png)
 
 [![Screenshot](https://github.com/Schoewilliam/configs/blob/master/screenshots/octobre2012mini.png?raw=true)](http://schoewilliam.deviantart.com/art/MonsterWM-Archlinux-October-2012-332177827)
 
