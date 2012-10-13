@@ -9,6 +9,13 @@ dotfiles :
 
 - - -
 
-[**August 2012 Screenshot**](http://schoewilliam.deviantart.com/art/WMFS2-August-2012-archlinux-320699729) — WMFS2 Desktop.
+## Last MonsterWM Desktop (October 2012)
+[**October 2012 Screenshot**]()
 
-[![Screenshot](https://github.com/Schoewilliam/configs/blob/master/aout2012preview.png?raw=true)](http://schoewilliam.deviantart.com/art/WMFS2-August-2012-archlinux-320699729)
+[![Screenshot]()](http://schoewilliam.deviantart.com/art/MonsterWM-Archlinux-October-2012-332177827)
+
+
+## Last WMFS2 Desktop (August 2012)
+[**August 2012 Screenshot**]()
+
+[![Screenshot]()](http://schoewilliam.deviantart.com/art/WMFS2-August-2012-archlinux-320699729)
