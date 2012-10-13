@@ -1,50 +1,54 @@
 xvt*termName: rxvt
-URxvt*font: xft:Terminus:pixelsize=15: antialias=true
+URxvt*font: xft:envypn:pixelsize=15: antialias=true
 URxvt*allow_bold: true
 URxvt*depth: 0
-
-*foreground: #a7b9dc
-*background: #0d111b
-
 URxvt*transparent: false
-URxvt*shading: 20
 URxvt*tint: #000000
-URxvt*cursorBlink: true
-URxvt*cursorColor: #6f9f09
+URxvt*cursorBlink: false
 URxvt*scrollBar: false
 URxvt*saveLines: 1000
 URxvt*perl-ext-common: default,matcher
 URxvt*urlLauncher: firefox
-URxvt*colorUL: #7FB0F1
+URxvt*colorUL: #66cccc
 URxvt*matcher.button: 1
 URxvt*tabbed.tabbar-fg: 10
 URxvt*tabbed.tabbar-bg: #000000
 URxvt*tabbed.tab-fg: 4
 URxvt*tabbed.tab-bg: #000000
+*fading: 0
 
-*fading: 20
+*.foreground:   #cccccc
+*.background:   #222222
+*.cursorColor:  #aeafad
 
-! Black
-*color0: #0d111b
-*color8: #666666
-! Red
-*color1: #a64070
-*color9: #a65e80
-! Green
-*color2: #4a9b6c
-*color10: #6f9f09
-! Yellow
-*color3: #bc9c4f
-*color11: #edb36f
-! Blue
-*color4: #35679a
-*color12: #0387db
-! Magenta
-*color5: #724c98
-*color13: #7e62b3
-! Cyan
-*color6: #4fb5db
-*color14: #12b5ff
-! White
-*color7: #8998a1
-*color15: #c0c0c0
+! Black / Grey
+*.color0:       #000000
+*.color8:       #666666
+
+! Red / Bright Red
+*.color1:       #f2777a
+*.color9:       #FF3334
+
+! Green + Bright Green
+*.color2:       #99cc99
+*.color10:      #9ec400
+
+! Yellow (Orange) + Bright Yellow (Yellow)
+*.color3:       #f99157
+*.color11:      #ffcc66
+
+! Blue + Bright Blue
+*.color4:       #6699cc
+*.color12:      #6699cc
+
+! Magenta (Purple) + Bright Magenta
+*.color5:       #b777e0
+*.color13:      #b777e0
+
+! Cyan (Aqua) + Bright Cyan
+*.color6:       #66cccc
+*.color14:      #54ced6
+
+! Light Grey (Selection) + White (Current Line)
+*.color7:       #ababab
+*.color15:      #cccccc
