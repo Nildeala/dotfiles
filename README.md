@@ -1,15 +1,18 @@
 # Some of my configuration files
 - - -
 
+Windows Managers configs :
+[**WMFS²**](http://wmfs.info), [**MonsterWM**](https://github.com/c00kiemon5ter/monsterwm)
+
 apps configs :  
-**ncmpcpp**, **wmfs** (*WMFS2*), **twmn** (notification daemon made for tiling window managers), **poezio** (my theme *limitfree.py*)
+**ncmpcpp** (mpd client), **twmn** (notification daemon made for tiling window managers), **poezio** (my theme *limitfree.py*)
 
 dotfiles :  
 **.Xresources**.
 
 - - -
 
-## Last MonsterWM Desktop (October 2012)
+### Last MonsterWM Desktop (October 2012)
 [**October 2012 Screenshot**](https://github.com/Schoewilliam/configs/blob/master/screenshots/october2012.png)
 
 [![Screenshot](https://github.com/Schoewilliam/configs/blob/master/screenshots/octobre2012mini.png?raw=true)](http://schoewilliam.deviantart.com/art/MonsterWM-Archlinux-October-2012-332177827)
