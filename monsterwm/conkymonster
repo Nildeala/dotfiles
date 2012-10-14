@@ -60,5 +60,4 @@ ${if_match ${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -
 $endif\
 \
 \
-^fg(\#777)${time %A %e %B %Y} ^fg(\#dedede)${time %R}  \
-^fg(\#777)utc ^fg(\#dedede)${utime %R}  \
+^fg(\#777)${time %A %e %B %Y} ^fg(\#dedede)${time %R} \
