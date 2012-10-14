@@ -3,8 +3,8 @@
 # First define colors
 norm_fg="#909090" # Light Gray
 norm_bg="#1a1a1a" # Black
-sel_fg="#303030" # Black
-sel_bg="#909090" # Light Gray
+sel_fg="#f99157"
+sel_bg="#000000"
 err_fg="#ffffff"  # White
 err_bg="#f2777a"  # Red
 
@@ -29,7 +29,7 @@ while read -t 2 -r wmout || true; do
 				IFS=':' read -r d w m c u <<< "$desktop"
 				# Set the icon for desktops with windows
 				ic=" "
-                                ((w)) && ic=" *^fg(#dedede)"
+                                ((w)) && ic=" *"
 				# name each desktop
 				case $d in
 					0) d="u " ;;
