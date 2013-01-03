@@ -3,12 +3,12 @@
 # First define colors
 norm_fg="#909090" # Light Gray
 norm_bg="#1a1a1a" # Black
-sel_fg="#f99157"
-sel_bg="#000000"
+sel_fg="#ffffff"  # Jaune
+sel_bg="#3a3a3a"  # 
 err_fg="#ffffff"  # White
 err_bg="#f2777a"  # Red
 
-conky -c ~/bin/conkymonster | dzen2 -h 20 -w 1620 -x 300 -ta r -bg "#1a1a1a" -fg "#cccccc" -fn "-*-envypn-medium-*-*--13-*-*-*-*-*-*-1" &
+conky -c ~/bin/conkymonster | dzen2 -h 20 -w 1620 -x 300 -ta r -bg "#1a1a1a" -fg "#cccccc" -fn "-*-envypn-medium-*-*--13-*-*-*-*-*-*-1" -e "button2=stick" &
 
 : "${wm:="monsterwm"}"
 : "${ff:="/tmp/monsterwm.fifo"}"
@@ -56,6 +56,6 @@ while read -t 2 -r wmout || true; do
 	    done
     fi
     printf "%s%s\n" "$r" "$i" 
-done < "$ff" | dzen2 -fg "#cccccc" -bg "#1a1a1a" -h 20 -fn "-*-envypn-medium-*-*--13-*-*-*-*-*-*-1" -ta l -w 300 &
+done < "$ff" | dzen2 -fg "#cccccc" -bg "#1a1a1a" -h 20 -fn "-*-envypn-medium-*-*--13-*-*-*-*-*-*-1" -ta l -w 300 -e "button2=stick" &
 
 while :; do "$wm" || break; done | tee -a "$ff"
