@@ -19,6 +19,6 @@ dotfiles :
 
 
 ### Last WMFS2 Desktop (August 2012)
-[**August 2012 Screenshot**](https://github.com/Schoewilliam/configs/blob/master/screenshots/aout2012.png)
+[**August 2012 Screenshot**](https://github.com/Schoewilliam/configs/blob/master/screenshots/2012-08.png)
 
-[![Screenshot](https://github.com/Schoewilliam/configs/blob/master/screenshots/aout2012mini.png?raw=true)](http://schoewilliam.deviantart.com/art/WMFS2-August-2012-archlinux-320699729)
+[![Screenshot](https://github.com/Schoewilliam/configs/blob/master/screenshots/2012-08mini.png?raw=true)](http://schoewilliam.deviantart.com/art/WMFS2-August-2012-archlinux-320699729)
