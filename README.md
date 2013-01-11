@@ -5,7 +5,7 @@ Windows Managers configs :
 [**WMFS²**](http://wmfs.info), [**MonsterWM**](https://github.com/c00kiemon5ter/monsterwm)
 
 apps configs :  
-**ncmpcpp** (mpd client), **twmn** (notification daemon made for tiling window managers), **poezio** (my theme *limitfree.py*)
+**ncmpcpp** (mpd client), **twmn** (notification daemon made for tiling window managers), **poezio** (my theme *limitfree.py*), **weechat** (irc).
 
 dotfiles :  
 **.Xresources**.
