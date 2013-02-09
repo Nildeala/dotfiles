@@ -13,11 +13,11 @@ use_xft yes
  
 TEXT
 ^fg(\#444)${if_up wlan0}${addr wlan0}  $endif\
-${if_running pacman}^fg(\#f99157)^bg(\#4A2F20)  pacman ^fg(\#dedede)actif  ^fg(\#444)$endif^bg()\
+${if_running pacman}^fg(\#f99157)^bg(\#4A2F20)  pacman ^fg(\#dedede)actif  ^fg(\#444)^bg()$endif\
 \
 ${if_running mplayer}\
-^fg(\#777)mplayer ^fg(\#99cc99)> ^fg(\#dedede)lecture\
-  ^fg(\#444)::  $endif\
+^bg(\#294C1C)^fg(\#D9FFCB)  mplayer > ^fg(\#eee)lecture  ^bg()\
+^fg(\#444)$endif\
 \
 \
 ${if_running skype}^fg(\#6699cc)  skype ^fg(\#dedede)actif  ^fg(\#444)$endif\
