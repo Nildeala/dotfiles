@@ -21,7 +21,7 @@
 #define CLICK_TO_FOCUS  True      /* focus an unfocused window when clicked  */
 #define FOCUS_BUTTON    Button3   /* mouse button to be used along with CLICK_TO_FOCUS */
 #define BORDER_WIDTH    2         /* window border width */
-#define FOCUS           "#ff950e" /* focused window border color    */
+#define FOCUS           "#4C9698" /* focused window border color    */
 #define UNFOCUS         "#444444" /* unfocused window border color  */
 #define MINWSZ          50        /* minimum window size in pixels  */
 #define DEFAULT_DESKTOP 0         /* the desktop to focus initially */
@@ -47,7 +47,7 @@ static const char *termcmd[] = { "urxvt",     NULL };
 static const char *menucmd[] = { "dmenu_run", "-fn", "-*-envypn-medium-*-*--15-*-*-*-*-*-*-1", "-nb", "#2a2a2a", "-nf", "#ccc", "-sb", "#909090", "-sf", "#111", "-l", "10", NULL };
 static const char *volupcmd[] = { "amixer", "-c", "0", "set", "Master", "3+", "unmute", NULL };
 static const char *voldowncmd[] = { "amixer", "-c", "0", "set", "Master", "3-", "unmute", NULL };
-static const char *volmutecmd[] = { "amixer", "sset", "Master", "toggle", NULL };
+static const char *volmutecmd[] = { "/home/william/bin/vol", "-mute", NULL };
 static const char *mpdplaycmd[] = { "ncmpcpp", "toggle", NULL };
 static const char *scrot[] = { "scrot", NULL };
 static const char *lockscreen[] = { "xautolock", "-locknow", NULL };
