@@ -12,65 +12,66 @@ default_outline_color black
 use_xft yes
  
 TEXT
-^fg(\#444)${addr wlan0}  ::  \
-${if_running pacman}^fg(\#f99157)pacman ^fg(\#dedede)actif  ^fg(\#444)::  $endif\
+^fg(\#444)${if_up wlan0}${addr wlan0}  $endif\
+${if_running pacman}^fg(\#f99157)^bg(\#4A2F20)  pacman ^fg(\#dedede)actif  ^fg(\#444)$endif^bg()\
 \
 ${if_running mplayer}\
 ^fg(\#777)mplayer ^fg(\#99cc99)> ^fg(\#dedede)lecture\
   ^fg(\#444)::  $endif\
 \
+\
+${if_running skype}^fg(\#6699cc)  skype ^fg(\#dedede)actif  ^fg(\#444)$endif\
+\
 ${if_match "$mpd_status" != "Stopped"}\
-^fg(\#777777)$mpd_elapsed/$mpd_length\
+  ^fg(\#777777)$mpd_elapsed/$mpd_length\
 ${if_match "$mpd_status" == "Playing"} ^fg(\#99cc99)> $endif\
 ${if_match "$mpd_status" == "Paused"} ^fg(\#f99157)= $endif\
-^fg(\#dedede)${mpd_smart 70}  ^fg(\#444)::  $endif\
+^fg(\#dedede)${mpd_smart 70}  ^fg(\#444)$endif\
 \
-\
-${if_running skype}^fg(\#6699cc)skype ^fg(\#dedede)actif  ^fg(\#444)::  $endif\
 \
 ${if_up wlan0}$else\
-^fg(\#dedede)netcfg ^fg(\#f2777a)aucune connexion réseau  ^fg(\#444)::  \
+^fg(\#dedede)^bg(\#4A2020)  netcfg ^fg(\#f2777a)wlan0 déconnecté  ^fg(\#444)^bg()\
 $endif\
-\
+^bg()\
 ${if_match $cpu >= 80}\
-^fg(\#f2777a)cpu ^fg(\#dedede)$cpu%  \
+^fg(\#f2777a)^bg(\#612626)  cpu ^fg(\#dedede)$cpu%  ^bg()\
 $endif\
 ${if_match $cpu >= 41}\
 ${if_match $cpu <= 79}\
-^fg(\#F99157)cp^fg(\#777)u ^fg(\#dedede)$cpu%  \
+^fg(\#F99157)^bg(\#382B1C)  cp^fg(\#777)u ^fg(\#dedede)$cpu%  ^bg()\
 $endif\
 $endif\
 ${if_match $cpu <= 40}\
-^fg(\#99cc99)c^fg(\#777)pu ^fg(\#dedede)$cpu%  \
+^fg(\#84AFDB)^bg(\#122628)  c^fg(\#777)pu ^fg(\#dedede)$cpu%  ^bg()\
 $endif\
 \
 ${if_match $memperc >= 80}\
-^fg(\#f2777a)mem ^fg(\#dedede)$memperc%  \
+^fg(\#f2777a)^bg(\#612626)  mem ^fg(\#dedede)$memperc%  ^bg()\
 $endif\
 ${if_match $memperc >= 41}\
 ${if_match $memperc <= 79}\
-^fg(\#f99157)me^fg(\#777)m ^fg(\#dedede)$memperc%  \
+^fg(\#f99157)^bg(\#382B1C)  me^fg(\#777)m ^fg(\#dedede)$memperc%  ^bg()\
 $endif\
 $endif\
 ${if_match $memperc <= 40}\
-^fg(\#99cc99)m^fg(\#777)em ^fg(\#dedede)$memperc%  \
+^fg(\#84AFDB)^bg(\#162C2E)  m^fg(\#777)em ^fg(\#dedede)$memperc%  ^bg()\
 $endif\
 \
 \
 ${if_match ${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"} >= 81}\
-^fg(\#99cc99)vol ^fg(\#dedede)${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"}  \
+^fg(\#84AFDB)^bg(\#193033)  vol ^fg(\#dedede)${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"}  ^bg()\
 $endif\
 \
 ${if_match ${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"} >= 50}\
 ${if_match ${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"} <= 80}\
-^fg(\#f99157)vo^fg(\#777)l ^fg(\#dedede)${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"}  \
+^fg(\#f99157)^bg(\#382B1C)  vo^fg(\#777)l ^fg(\#dedede)${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"}  ^bg()\
 $endif\
 $endif\
 \
 ${if_match ${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"} <= 49}\
-^fg(\#f2777a)v^fg(\#777)ol ^fg(\#dedede)${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"}  \
+^fg(\#f2777a)^bg(\#4A2020)  v^fg(\#777)ol ^fg(\#dedede)${exec amixer get Master | grep "Mono: P" | awk '{print $4}' | grep -oE "[[:digit:]]{1,}"}  ^bg()\
 $endif\
 \
-^fg(\#444)::  \
+^fg(\#323232)^bg(\#22383B)  \
 \
-^fg(\#777)${time %A %e %B %Y} ^fg(\#dedede)${time %H h %M} \
+^fg(\#84AFDB)${time %A %e %B %Y}  ^fg(\#dedede)^bg(\#22383b)${time %H h %M}  \
