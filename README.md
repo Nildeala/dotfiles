@@ -12,7 +12,7 @@ dotfiles :
 
 - - -
 
-### Last MonsterWM Desktop (October 2012)
+### Last MonsterWM Desktop (January 2013)
 [**January 2013 Screenshot**](https://github.com/Schoewilliam/configs/blob/master/screenshots/2013-01.png)
 
 [![Screenshot](https://github.com/Schoewilliam/configs/blob/master/screenshots/2013-01mini.png?raw=true)](http://schoewilliam.deviantart.com/art/MonsterWM-January-2013-archlinux-346452273)
