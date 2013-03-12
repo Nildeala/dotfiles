@@ -16,17 +16,23 @@ TEXT
 ${if_running pacman}^fg(\#f99157)^bg(\#4A2F20)  pacman ^fg(\#dedede)actif  ^fg(\#444)^bg()$endif\
 \
 ${if_running mplayer}\
-^bg(\#294C1C)^fg(\#D9FFCB)  mplayer > ^fg(\#eee)lecture  ^bg()\
+^bg(\#29381C)^fg(\#D9FFCB)  mplayer > ^fg(\#eee)lecture  ^bg()\
 ^fg(\#444)$endif\
-\
 \
 ${if_running skype}^fg(\#6699cc)  skype ^fg(\#dedede)actif  ^fg(\#444)$endif\
 \
+\
 ${if_match "$mpd_status" != "Stopped"}\
-  ^fg(\#777777)$mpd_elapsed/$mpd_length\
-${if_match "$mpd_status" == "Playing"} ^fg(\#99cc99)> $endif\
-${if_match "$mpd_status" == "Paused"} ^fg(\#f99157)= $endif\
-^fg(\#dedede)${mpd_smart 70}  ^fg(\#444)$endif\
+${if_match "$mpd_status" == "Playing"}^bg(\#122628)  \
+^fg(\#84AFDB)»^fg(\#ccc)» \
+^fg(\#84AFDB)$mpd_elapsed $mpd_length ^fg()\
+^fg(\#dedede)${mpd_smart 70}\
+$endif\
+${if_match "$mpd_status" == "Paused"}^bg(\#382b1c)  \
+^fg(\#f99157)=^fg(\#ccc)= \
+^fg(\#f99157)$mpd_elapsed $mpd_length ^fg()\
+^fg(\#dedede)${mpd_smart 70}$endif\
+  ^bg()$endif\
 \
 \
 ${if_up wlan0}$else\
@@ -36,24 +42,24 @@ $endif\
 ${if_match $cpu >= 80}\
 ^fg(\#f2777a)^bg(\#612626)  cpu ^fg(\#dedede)$cpu%  ^bg()\
 $endif\
-${if_match $cpu >= 41}\
+${if_match $cpu >= 51}\
 ${if_match $cpu <= 79}\
 ^fg(\#F99157)^bg(\#382B1C)  cp^fg(\#777)u ^fg(\#dedede)$cpu%  ^bg()\
 $endif\
 $endif\
-${if_match $cpu <= 40}\
+${if_match $cpu <= 50}\
 ^fg(\#84AFDB)^bg(\#122628)  c^fg(\#777)pu ^fg(\#dedede)$cpu%  ^bg()\
 $endif\
 \
 ${if_match $memperc >= 80}\
 ^fg(\#f2777a)^bg(\#612626)  mem ^fg(\#dedede)$memperc%  ^bg()\
 $endif\
-${if_match $memperc >= 41}\
+${if_match $memperc >= 51}\
 ${if_match $memperc <= 79}\
 ^fg(\#f99157)^bg(\#382B1C)  me^fg(\#777)m ^fg(\#dedede)$memperc%  ^bg()\
 $endif\
 $endif\
-${if_match $memperc <= 40}\
+${if_match $memperc <= 50}\
 ^fg(\#84AFDB)^bg(\#162C2E)  m^fg(\#777)em ^fg(\#dedede)$memperc%  ^bg()\
 $endif\
 \
