@@ -7,7 +7,8 @@ no_buffers yes
 
 default_color FFFFFF #blanc
 default_shade_color 333333
-default_outline_color black
+
+display_remaining_time = "no"default_outline_color black
 
 use_xft yes
  
@@ -19,24 +20,20 @@ ${if_running mplayer}\
 ^bg(\#29381C)^fg(\#D9FFCB)  mplayer > ^fg(\#eee)lecture  ^bg()\
 ^fg(\#444)$endif\
 \
-${if_running skype}^fg(\#6699cc)  skype ^fg(\#dedede)actif  ^fg(\#444)$endif\
-\
 \
 ${if_match "$mpd_status" != "Stopped"}\
-${if_match "$mpd_status" == "Playing"}^bg(\#122628)  \
+${if_match "$mpd_status" == "Playing"}^bg(\#122628)  ^fg(\#84afd8)mpd \
 ^fg(\#84AFDB)»^fg(\#ccc)» \
-^fg(\#84AFDB)$mpd_elapsed $mpd_length ^fg()\
 ^fg(\#dedede)${mpd_smart 70}\
 $endif\
-${if_match "$mpd_status" == "Paused"}^bg(\#382b1c)  \
-^fg(\#f99157)=^fg(\#ccc)= \
-^fg(\#f99157)$mpd_elapsed $mpd_length ^fg()\
+${if_match "$mpd_status" == "Paused"}^bg(\#382b1c)  ^fg(\#f99157)mpd \
+^fg(\#f99157)»^fg(\#ccc)» \
 ^fg(\#dedede)${mpd_smart 70}$endif\
   ^bg()$endif\
 \
 \
 ${if_up wlan0}$else\
-^fg(\#dedede)^bg(\#4A2020)  netcfg ^fg(\#f2777a)wlan0 déconnecté  ^fg(\#444)^bg()\
+^fg(\#dedede)^bg(\#4A2020)  wlan0 ^fg(\#f2777a)déconnecté  ^fg(\#444)^bg()\
 $endif\
 ^bg()\
 ${if_match $cpu >= 80}\
