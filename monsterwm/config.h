@@ -21,7 +21,7 @@
 #define CLICK_TO_FOCUS  True      /* focus an unfocused window when clicked  */
 #define FOCUS_BUTTON    Button3   /* mouse button to be used along with CLICK_TO_FOCUS */
 #define BORDER_WIDTH    2         /* window border width */
-#define FOCUS           "#4C9698" /* focused window border color    */
+#define FOCUS           "#B39975" /* focused window border color    */
 #define UNFOCUS         "#444444" /* unfocused window border color  */
 #define MINWSZ          50        /* minimum window size in pixels  */
 #define DEFAULT_DESKTOP 0         /* the desktop to focus initially */
@@ -34,6 +34,7 @@
 static const AppRule rules[] = { \
     /*  class     desktop  follow  float */
     { "MPlayer",     -1,    True,   True },
+    { "feh",         -1,    True,   True },
 };
 
 /* helper for spawning shell commands */
@@ -44,13 +45,11 @@ static const AppRule rules[] = { \
  * must always end with ', NULL };'
  */
 static const char *termcmd[] = { "urxvt",     NULL };
-static const char *menucmd[] = { "dmenu_run", "-fn", "-*-envypn-medium-*-*--15-*-*-*-*-*-*-1", "-nb", "#2a2a2a", "-nf", "#ccc", "-sb", "#909090", "-sf", "#111", "-l", "10", NULL };
-static const char *volupcmd[] = { "amixer", "-c", "0", "set", "Master", "3+", "unmute", NULL };
-static const char *voldowncmd[] = { "amixer", "-c", "0", "set", "Master", "3-", "unmute", NULL };
-static const char *volmutecmd[] = { "/home/william/bin/vol", "-mute", NULL };
-static const char *mpdplaycmd[] = { "ncmpcpp", "toggle", NULL };
-static const char *scrot[] = { "scrot", NULL };
-static const char *lockscreen[] = { "xautolock", "-locknow", NULL };
+static const char *menucmd[] = { "dmenu_run", "-fn", "-*-envypn-medium-*-*--14-*-*-*-*-*-*-1", "-nb", "#000", "-nf", "#aaa", "-sb", "#909090", "-sf", "#111", "-l", "10", NULL };
+static const char *volupcmd[] = { "pamixer", "--increase", "5", NULL };
+static const char *voldowncmd[] = { "pamixer", "--decrease", "5", NULL };
+static const char *volmutecmd[] = { "pamixer", "--toggle-mute", NULL };
+static const char *xcompcmd[] = { "/home/william/bin/togglecomp", NULL };
 
 #define DESKTOPCHANGE(K,N) \
     {  MOD1,             K,              change_desktop, {.i = N}}, \
@@ -87,12 +86,10 @@ static Key keys[] = {
     {  MOD1|CONTROL,     XK_q,          quit,              {.i = 1}}, /* quit with exit value 1 */
     {  MOD4,             XK_Return,     spawn,             {.com = termcmd}},
     {  MOD4,             XK_v,          spawn,             {.com = menucmd}},
-    {  0,                0x1008ff13,    spawn,             {.com = volupcmd}}, /* Augmenter le volume  touche multimédia */
-    {  0,                0x1008ff11,    spawn,             {.com = voldowncmd}}, /* réduire le volume */
-    {  0,                0x1008ff12,    spawn,             {.com = volmutecmd}}, /* muet */
-    {  0,                0x1008ff14,    spawn,             {.com = mpdplaycmd}}, /* play music via ncmpcpp */
-    {  0,                0xff61,        spawn,             {.com = scrot}}, /* take screenshot via scrot */
-    {  0,                0xff13,        spawn,             {.com = lockscreen}}, /* lockscreen */
+    {  MOD1,             0xffab,        spawn,             {.com = volupcmd}}, /* Augmenter le volume  touche multimédia */
+    {  MOD1,             0xffad,        spawn,             {.com = voldowncmd}}, /* réduire le volume */
+    {  MOD1,             0xffb0,        spawn,             {.com = volmutecmd}}, /* muet */
+    {  MOD1,             XK_x,          spawn,             {.com = xcompcmd}}, /* xcompmgr */
     {  MOD1,             XK_j,          moveresize,        {.v = (int []){   0,  25,   0,   0 }}}, /* move down  */
     {  MOD1,             XK_k,          moveresize,        {.v = (int []){   0, -25,   0,   0 }}}, /* move up    */
     {  MOD1,             XK_l,          moveresize,        {.v = (int []){  25,   0,   0,   0 }}}, /* move right */
