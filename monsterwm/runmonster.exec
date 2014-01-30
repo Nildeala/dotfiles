@@ -1,14 +1,26 @@
 #!/usr/bin/env bash
 
+xset +fp /usr/share/fonts/envypn &
+xset fp rehash &
+
+setxkbmap -layout fr -variant bepo &
+xsetroot -cursor_name "arrow" &
+numlockx on &
+setxkbmap -option terminate:ctrl_alt_bksp &
+redshift &
+sh .fehbg &
+clipit -n -d &
+compton &
+
 # First define colors
-norm_fg="#909090" # Light Gray
-norm_bg="#1a1a1a" # Black
-sel_fg="#ffffff"  # Jaune
-sel_bg="#3a3a3a"  # 
+norm_fg="#222" # Light Gray
+norm_bg="#000" # Black
+sel_fg="#B39975"  # Jaune
+sel_bg="#444"  #
 err_fg="#ffffff"  # White
 err_bg="#f2777a"  # Red
 
-conky -c ~/bin/conkymonster | dzen2 -h 20 -w 1620 -x 300 -ta r -bg "#1a1a1a" -fg "#cccccc" -fn "-*-envypn-medium-*-*--13-*-*-*-*-*-*-1" -e "button2=stick" &
+#conky -c ~/bin/conkymonstersimple | dzen2 -ta l -h 20 -w 1620 -x 300 -bg "#1a1a1a" -fg "#cccccc" -fn "-*-Inconsolata-*-*-normal-*-*-*-*-*-*-*-*-*" -e "button2=stick" &
 
 : "${wm:="monsterwm"}"
 : "${ff:="/tmp/monsterwm.fifo"}"
@@ -29,25 +41,25 @@ while read -t 2 -r wmout || true; do
 				IFS=':' read -r d w m c u <<< "$desktop"
 				# Set the icon for desktops with windows
 				ic=" "
-                                ((w)) && ic=" *"
+				((w)) && ic=" ^fg(#ccc)"
 				# name each desktop
 				case $d in
-					0) d="u " ;;
-					1) d="d " ;;
-					2) d="t " ;;
-					3) d="q " ;;
-					4) d="c " ;;
-					5) d="sx " ;;
-					6) d="sp " ;;
+					0) d="◼^fg() " ;;
+					1) d="◼^fg() " ;;
+					2) d="◼^fg() " ;;
+					3) d="◼^fg() " ;;
+					4) d="◼^fg() " ;;
+					5) d="◼^fg() " ;;
+					6) d="◼^fg() " ;;
 				esac
 				# we will also display the current desktop's tiling layout/mode
 				((c)) && fg="$sel_fg" bg="$sel_bg" && case $m in
 					# name each layout/mode with a symbol
-					0) i=" [T]" ;;
+					0) i="  ⮘ " ;;
 					1) i=" [$w]" ;;
- 					2) i=" [b]" ;;
- 					3) i=" [G]" ;;
- 					4) i=" [F]" ;;
+ 					2) i="  ⮚ " ;;
+ 					3) i="  ⮧ " ;;
+ 					4) i="  ⮛ " ;;
  				esac || fg="$norm_fg" bg="$norm_bg"
         			# if the desktop has an urgent hint its color should be err_fg/err_bg
 				((u)) && fg="$err_fg" bg="$err_bg"
@@ -55,7 +67,8 @@ while read -t 2 -r wmout || true; do
 				r+="^bg($norm_bg)^bg($bg)^fg($fg)$ic$d^fg($norm_fg)^bg($norm_bg)"
 	    done
     fi
-    printf "%s%s\n" "$r" "$i" 
-done < "$ff" | dzen2 -fg "#cccccc" -bg "#1a1a1a" -h 20 -fn "-*-envypn-medium-*-*--13-*-*-*-*-*-*-1" -ta l -w 300 -e "button2=stick" &
+    printf "^fg(#B39975)⮖ $(date "+%a %e %b")  ^fg(#aaa)$(date "+%H h %M")   "
+    printf "%s%s\n" "$r" "^fg(#aaa)$i  "
+done < "$ff" | dzen2 -fg "#cccccc" -bg "#000" -h 20 -fn "Lemon-9" -ta r -w 1920 -e "button2=stick" &
 
 while :; do "$wm" || break; done | tee -a "$ff"

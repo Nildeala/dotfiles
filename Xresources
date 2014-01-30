@@ -1,54 +1,88 @@
-xvt*termName: rxvt
-URxvt*font: xft:envypn:pixelsize=15: antialias=true
-URxvt*allow_bold: true
-URxvt*depth: 0
-URxvt*transparent: false
-URxvt*tint: #000000
-URxvt*cursorBlink: false
-URxvt*scrollBar: false
-URxvt*saveLines: 1000
-URxvt*perl-ext-common: default,matcher
-URxvt*urlLauncher: firefox
-URxvt*colorUL: #66cccc
-URxvt*matcher.button: 1
-URxvt*tabbed.tabbar-fg: 10
-URxvt*tabbed.tabbar-bg: #000000
-URxvt*tabbed.tab-fg: 4
-URxvt*tabbed.tab-bg: #000000
-*fading: 0
+!URxvt.font: xft:Inconsolata:size=11
+!URxvt.font: xft:envypn:size=11
+!URxvt.font: xft:lemon:size=16
+URxvt.font: xft:uushi:size=9
+URxvt.scrollBar: false
+URxvt.matcher.button:   1
+URxvt.perl-ext-common:      default,clipboard,url-select
+URxvt.url-select.launcher:  /usr/bin/firefox
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.internalBorder:15
+URxvt.externalBorder:0
 
-*.foreground:   #cccccc
-*.background:   #222222
+URxvt.geometry:				 100x24
+
+
+!XTerm*faceName: xft:envypn:size=18
+!XTerm*faceSize: 15
+!XTerm*utf8:     2
+!xterm*utf8Title: true
+
+!*fading: 0
+
+!*.foreground:   #cccccc
+!*.background:   #222222
 *.cursorColor:  #aeafad
 
 ! Black / Grey
-*.color0:       #000000
-*.color8:       #666666
+!*.color0:       #222222
+!*.color8:       #666666
 
 ! Red / Bright Red
-*.color1:       #f2777a
-*.color9:       #FF3334
+!*.color1:       #f2777a
+!*.color9:       #FF3334
 
 ! Green + Bright Green
-*.color2:       #99cc99
-*.color10:      #9ec400
+!*.color2:       #99cc99
+!*.color10:      #9ec400
 
 ! Yellow (Orange) + Bright Yellow (Yellow)
-*.color3:       #f99157
-*.color11:      #ffcc66
+!*.color3:       #f99157
+!*.color11:      #ffcc66
 
 ! Blue + Bright Blue
-*.color4:       #6699cc
-*.color12:      #6699cc
+!*.color4:       #6699cc
+!*.color12:      #6699cc
 
 ! Magenta (Purple) + Bright Magenta
-*.color5:       #b777e0
-*.color13:      #b777e0
+!*.color5:       #b777e0
+!*.color13:      #b777e0
 
 ! Cyan (Aqua) + Bright Cyan
-*.color6:       #66cccc
-*.color14:      #54ced6
+!*.color6:       #66cccc
+!*.color14:      #54ced6
 
 ! Light Grey (Selection) + White (Current Line)
-*.color7:       #ababab
-*.color15:      #cccccc
+!*.color7:       #ababab
+!*.color15:      #cccccc
+
+
+! -- colors
+! !black
+ URxvt.color0:  #130F1C
+ URxvt.color8:  #5A545E
+! !red
+ URxvt.color1:  #AD6A72
+ URxvt.color9:  #D99395
+! !green
+ URxvt.color2:  #A2B07F
+ URxvt.color10: #C4D1A1
+! !yellow
+ URxvt.color3:  #B39976
+ URxvt.color11: #D1C894
+! !blue
+ URxvt.color4:  #829BA8
+ URxvt.color12: #9BB6D4
+! !magenta
+ URxvt.color5:  #AD748E
+ URxvt.color13: #DB9CBE
+! !cyan
+ URxvt.color6:  #728C85
+ URxvt.color14: #A6B9B6
+! !white
+ URxvt.color7: #B5ADB8
+ URxvt.color15: #D4CED9
+
+URxvt.background: [85]#242325
+URxvt.foreground: 15
