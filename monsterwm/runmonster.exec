@@ -11,6 +11,7 @@ redshift &
 sh .fehbg &
 clipit -n -d &
 compton &
+dunst &
 
 # First define colors
 norm_fg="#222" # Light Gray
@@ -69,6 +70,8 @@ while read -t 2 -r wmout || true; do
     fi
     printf "^fg(#B39975)⮖ $(date "+%a %e %b")  ^fg(#aaa)$(date "+%H h %M")   "
     printf "%s%s\n" "$r" "^fg(#aaa)$i  "
-done < "$ff" | dzen2 -fg "#cccccc" -bg "#000" -h 20 -fn "Lemon-9" -ta r -w 1920 -e "button2=stick" &
+done < "$ff" | dzen2 -fg "#cccccc" -bg "#000" -h 20 -fn "Lemon-9" -ta r -x 200 -w 1720 -e "button2=stick" &
+
+echo "^fg(#666)  ⯈ Super+V pour Lancer" | dzen2 -fg "#cccccc" -bg "#000" -h 20 -fn "Lemon-9" -ta l -w 200 -e "button2=stick" -p &
 
 while :; do "$wm" || break; done | tee -a "$ff"

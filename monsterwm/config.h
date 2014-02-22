@@ -33,7 +33,7 @@
  */
 static const AppRule rules[] = { \
     /*  class     desktop  follow  float */
-    { "MPlayer",     -1,    True,   True },
+    /* { "MPlayer",     -1,    True,   True }, */
     { "feh",         -1,    True,   True },
 };
 
@@ -45,7 +45,7 @@ static const AppRule rules[] = { \
  * must always end with ', NULL };'
  */
 static const char *termcmd[] = { "urxvt",     NULL };
-static const char *menucmd[] = { "dmenu_run", "-fn", "-*-envypn-medium-*-*--14-*-*-*-*-*-*-1", "-nb", "#000", "-nf", "#aaa", "-sb", "#909090", "-sf", "#111", "-l", "10", NULL };
+static const char *menucmd[] = { "dmenu_run_aliases", "-fn", "Lemon-9", "-nb", "#000", "-nf", "#aaa", "-sb", "#b39975", "-sf", "#111", "-i", "-h", "20", NULL };
 static const char *volupcmd[] = { "pamixer", "--increase", "5", NULL };
 static const char *voldowncmd[] = { "pamixer", "--decrease", "5", NULL };
 static const char *volmutecmd[] = { "pamixer", "--toggle-mute", NULL };
