@@ -45,13 +45,13 @@ while read -t 2 -r wmout || true; do
 				((w)) && ic=" ^fg(#ccc)"
 				# name each desktop
 				case $d in
-					0) d="◼^fg() " ;;
-					1) d="◼^fg() " ;;
-					2) d="◼^fg() " ;;
-					3) d="◼^fg() " ;;
-					4) d="◼^fg() " ;;
-					5) d="◼^fg() " ;;
-					6) d="◼^fg() " ;;
+					0) d="•^fg() " ;;
+					1) d="•^fg() " ;;
+					2) d="•^fg() " ;;
+					3) d="•^fg() " ;;
+					4) d="•^fg() " ;;
+					5) d="•^fg() " ;;
+					6) d="•^fg() " ;;
 				esac
 				# we will also display the current desktop's tiling layout/mode
 				((c)) && fg="$sel_fg" bg="$sel_bg" && case $m in
@@ -72,6 +72,6 @@ while read -t 2 -r wmout || true; do
     printf "%s%s\n" "$r" "^fg(#aaa)$i  "
 done < "$ff" | dzen2 -fg "#cccccc" -bg "#000" -h 20 -fn "Lemon-9" -ta r -x 200 -w 1720 -e "button2=stick" &
 
-echo "^fg(#666)  ⯈ Super+V pour Lancer" | dzen2 -fg "#cccccc" -bg "#000" -h 20 -fn "Lemon-9" -ta l -w 200 -e "button2=stick" -p &
+echo "  ^fg(#999)^p(;-1)⯈  ^p()^fg(#666)Super+V pour Lancer" | dzen2 -fg "#cccccc" -bg "#000" -h 20 -fn "Lemon-9" -ta l -w 200 -e "button2=stick" -p &
 
 while :; do "$wm" || break; done | tee -a "$ff"

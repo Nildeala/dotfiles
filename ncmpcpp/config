@@ -1,7 +1,7 @@
 mpd_host = "localhost"
 mpd_port = "6600"
 mpd_music_dir = "~/music"
-mpd_connection_timeout = "5"
+mpd_connection_timeout = "25"
 mpd_crossfade_time = "3"
 
 visualizer_in_stereo = "yes"
@@ -114,3 +114,8 @@ color2 = "magenta"
 window_border_color = "white"
 active_window_border = "white"
 
+visualizer_fifo_path = "/home/william/bin/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_sync_interval = "1"
+#visualizer_type = "wave" (spectrum/wave)
+visualizer_type = "spectrum" (spectrum/wave)
