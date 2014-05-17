@@ -12,19 +12,7 @@ apps configs :
 * **poezio** (my theme *limitfree.py*) (xmpp client),
 * **twmn**, notification daemon made for tiling window mamagers, which I no longer use (see *dunst* above),
 * **weechat** (irc).
+* **vimperator**
 
 dotfiles :  
 * **.Xresources**.
-
-- - -
-
-### Last MonsterWM Desktop (January 2013)
-[**January 2013 Screenshot**](https://github.com/Schoewilliam/configs/blob/master/screenshots/2013-01.png)
-
-[![Screenshot](https://github.com/Schoewilliam/configs/blob/master/screenshots/2013-01mini.png?raw=true)](http://schoewilliam.deviantart.com/art/MonsterWM-January-2013-archlinux-346452273)
-
-
-### Last WMFS2 Desktop (August 2012)
-[**August 2012 Screenshot**](https://github.com/Schoewilliam/configs/blob/master/screenshots/2012-08.png)
-
-[![Screenshot](https://github.com/Schoewilliam/configs/blob/master/screenshots/2012-08mini.png?raw=true)](http://schoewilliam.deviantart.com/art/WMFS2-August-2012-archlinux-320699729)
