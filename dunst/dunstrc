@@ -48,7 +48,7 @@
     # right side of the screen. Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "0x10-0+20"
+    geometry = "0x10-0+0"
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
@@ -142,13 +142,13 @@
 
 
 [urgency_normal]
-    background = "#6B5829"
-    foreground = "#FFF4CB"
+    background = "#30373D"
+    foreground = "#B5BD68"
     timeout = 10
 
 [urgency_critical]
-    background = "#000000"
-    foreground = "#FFA3A3"
+    background = "#30373D"
+    foreground = "#CC6666"
     timeout = 10
 
 

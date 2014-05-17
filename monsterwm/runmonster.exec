@@ -12,14 +12,15 @@ sh .fehbg &
 clipit -n -d &
 compton &
 dunst &
+pulseaudio &
 
 # First define colors
-norm_fg="#222" # Light Gray
-norm_bg="#000" # Black
-sel_fg="#B39975"  # Jaune
-sel_bg="#444"  #
-err_fg="#ffffff"  # White
-err_bg="#f2777a"  # Red
+norm_fg="#333"
+norm_bg="#131517"
+sel_fg="#B7C1C5"
+sel_bg="#30373D"
+err_fg="#ffffff"
+err_bg="#f2777a"
 
 #conky -c ~/bin/conkymonstersimple | dzen2 -ta l -h 20 -w 1620 -x 300 -bg "#1a1a1a" -fg "#cccccc" -fn "-*-Inconsolata-*-*-normal-*-*-*-*-*-*-*-*-*" -e "button2=stick" &
 
@@ -42,25 +43,25 @@ while read -t 2 -r wmout || true; do
 				IFS=':' read -r d w m c u <<< "$desktop"
 				# Set the icon for desktops with windows
 				ic=" "
-				((w)) && ic=" ^fg(#ccc)"
+				((w)) && ic=" ^fg(#B7C1C5)"
 				# name each desktop
 				case $d in
-					0) d="•^fg() " ;;
-					1) d="•^fg() " ;;
-					2) d="•^fg() " ;;
-					3) d="•^fg() " ;;
-					4) d="•^fg() " ;;
-					5) d="•^fg() " ;;
-					6) d="•^fg() " ;;
+					0) d="■^fg() " ;;
+					1) d="■^fg() " ;;
+					2) d="■^fg() " ;;
+					3) d="■^fg() " ;;
+					4) d="■^fg() " ;;
+					5) d="■^fg() " ;;
+					6) d="■^fg() " ;;
 				esac
 				# we will also display the current desktop's tiling layout/mode
 				((c)) && fg="$sel_fg" bg="$sel_bg" && case $m in
 					# name each layout/mode with a symbol
-					0) i="  ⮘ " ;;
+					0) i="   ⮘" ;;
 					1) i=" [$w]" ;;
- 					2) i="  ⮚ " ;;
- 					3) i="  ⮧ " ;;
- 					4) i="  ⮛ " ;;
+ 					2) i="   ⮚" ;;
+ 					3) i="   ⮧" ;;
+ 					4) i="   ⮛" ;;
  				esac || fg="$norm_fg" bg="$norm_bg"
         			# if the desktop has an urgent hint its color should be err_fg/err_bg
 				((u)) && fg="$err_fg" bg="$err_bg"
@@ -68,10 +69,8 @@ while read -t 2 -r wmout || true; do
 				r+="^bg($norm_bg)^bg($bg)^fg($fg)$ic$d^fg($norm_fg)^bg($norm_bg)"
 	    done
     fi
-    printf "^fg(#B39975)⮖ $(date "+%a %e %b")  ^fg(#aaa)$(date "+%H h %M")   "
+    printf "^fg(#707880)$(date "+%a %e %b")  ^fg(#c5c8c6)$(date "+%H h %M")   "
     printf "%s%s\n" "$r" "^fg(#aaa)$i  "
-done < "$ff" | dzen2 -fg "#cccccc" -bg "#000" -h 20 -fn "Lemon-9" -ta r -x 200 -w 1720 -e "button2=stick" &
-
-echo "  ^fg(#999)^p(;-1)⯈  ^p()^fg(#666)Super+V pour Lancer" | dzen2 -fg "#cccccc" -bg "#000" -h 20 -fn "Lemon-9" -ta l -w 200 -e "button2=stick" -p &
+done < "$ff" | dzen2 -fg "#cccccc" -bg "#131517" -h 20 -fn "Lemon-9" -ta c -x 0 -e "button2=stick" &
 
 while :; do "$wm" || break; done | tee -a "$ff"
