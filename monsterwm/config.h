@@ -21,8 +21,8 @@
 #define CLICK_TO_FOCUS  True      /* focus an unfocused window when clicked  */
 #define FOCUS_BUTTON    Button3   /* mouse button to be used along with CLICK_TO_FOCUS */
 #define BORDER_WIDTH    2         /* window border width */
-#define FOCUS           "#B39975" /* focused window border color    */
-#define UNFOCUS         "#444444" /* unfocused window border color  */
+#define FOCUS           "#707880" /* focused window border color    */
+#define UNFOCUS         "#131517" /* unfocused window border color  */
 #define MINWSZ          50        /* minimum window size in pixels  */
 #define DEFAULT_DESKTOP 0         /* the desktop to focus initially */
 #define DESKTOPS        7         /* number of desktops - edit DESKTOPCHANGE keys to suit */
@@ -45,7 +45,7 @@ static const AppRule rules[] = { \
  * must always end with ', NULL };'
  */
 static const char *termcmd[] = { "urxvt",     NULL };
-static const char *menucmd[] = { "dmenu_run_aliases", "-fn", "Lemon-9", "-nb", "#000", "-nf", "#aaa", "-sb", "#b39975", "-sf", "#111", "-i", "-h", "20", NULL };
+static const char *menucmd[] = { "dmenu_run_aliases", "-fn", "Lemon-9", "-nb", "#131517", "-nf", "#aaa", "-sb", "#49545E", "-sf", "#111", "-i", "-h", "20", NULL };
 static const char *volupcmd[] = { "pamixer", "--increase", "5", NULL };
 static const char *voldowncmd[] = { "pamixer", "--decrease", "5", NULL };
 static const char *volmutecmd[] = { "pamixer", "--toggle-mute", NULL };

@@ -1,7 +1,8 @@
-!URxvt.font: xft:Inconsolata:size=11
+URxvt.font: xft:Inconsolata:size=10
 !URxvt.font: xft:envypn:size=11
 !URxvt.font: xft:lemon:size=16
-URxvt.font: xft:uushi:size=9
+!URxvt.font: xft:uushi:size=9
+URxvt.boldFont: 
 URxvt.scrollBar: false
 URxvt.matcher.button:   1
 URxvt.perl-ext-common:      default,clipboard,url-select
@@ -18,71 +19,30 @@ URxvt.geometry:				 100x24
 !XTerm*faceSize: 15
 !XTerm*utf8:     2
 !xterm*utf8Title: true
-
-!*fading: 0
-
-!*.foreground:   #cccccc
-!*.background:   #222222
-*.cursorColor:  #aeafad
-
-! Black / Grey
-!*.color0:       #222222
-!*.color8:       #666666
-
-! Red / Bright Red
-!*.color1:       #f2777a
-!*.color9:       #FF3334
-
-! Green + Bright Green
-!*.color2:       #99cc99
-!*.color10:      #9ec400
-
-! Yellow (Orange) + Bright Yellow (Yellow)
-!*.color3:       #f99157
-!*.color11:      #ffcc66
-
-! Blue + Bright Blue
-!*.color4:       #6699cc
-!*.color12:      #6699cc
-
-! Magenta (Purple) + Bright Magenta
-!*.color5:       #b777e0
-!*.color13:      #b777e0
-
-! Cyan (Aqua) + Bright Cyan
-!*.color6:       #66cccc
-!*.color14:      #54ced6
-
-! Light Grey (Selection) + White (Current Line)
-!*.color7:       #ababab
-!*.color15:      #cccccc
-
-
-! -- colors
-! !black
- URxvt.color0:  #130F1C
- URxvt.color8:  #5A545E
-! !red
- URxvt.color1:  #AD6A72
- URxvt.color9:  #D99395
-! !green
- URxvt.color2:  #A2B07F
- URxvt.color10: #C4D1A1
-! !yellow
- URxvt.color3:  #B39976
- URxvt.color11: #D1C894
-! !blue
- URxvt.color4:  #829BA8
- URxvt.color12: #9BB6D4
-! !magenta
- URxvt.color5:  #AD748E
- URxvt.color13: #DB9CBE
-! !cyan
- URxvt.color6:  #728C85
- URxvt.color14: #A6B9B6
-! !white
- URxvt.color7: #B5ADB8
- URxvt.color15: #D4CED9
-
-URxvt.background: [85]#242325
-URxvt.foreground: 15
+	
+*background: #1D1F21
+*foreground: #C5C8C6
+! black
+ *color0: #282A2E
+ *color8: #373B41
+! ! red
+ *color1: #A54242
+ *color9: #CC6666
+! ! green
+ *color2: #8C9440
+ *color10: #B5BD68
+! ! yellow
+ *color3: #DE935F
+ *color11: #F0C674
+! blue
+ *color4: #5F819D
+ *color12: #81A2BE
+! ! magenta
+*color5: #85678F
+*color13: #B294BB
+! cyan
+*color6: #5E8D87
+*color14: #8ABEB7
+! white
+*color7: #707880
+*color15: #C5C8C6
