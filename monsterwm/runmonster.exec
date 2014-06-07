@@ -42,13 +42,13 @@ while read -t 2 -r wmout || true; do
 				((w)) && ic=" ^fg(#B7C1C5)"
 				# name each desktop
 				case $d in
-					0) d=" ●  ^fg()" ;;
-					1) d=" ●  ^fg()" ;;
-					2) d=" ●  ^fg()" ;;
-					3) d=" ●  ^fg()" ;;
-					4) d=" ●  ^fg()" ;;
-					5) d=" ●  ^fg()" ;;
-					6) d=" ●  ^fg()" ;;
+					0) d="● ^fg()" ;;
+					1) d="○ ^fg()" ;;
+					2) d="● ^fg()" ;;
+					3) d="○ ^fg()" ;;
+					4) d="● ^fg()" ;;
+					5) d="○ ^fg()" ;;
+					6) d="● ^fg()" ;;
 				esac
 				# we will also display the current desktop's tiling layout/mode
 				((c)) && fg="$sel_fg" bg="$sel_bg" && case $m in
@@ -65,11 +65,9 @@ while read -t 2 -r wmout || true; do
 				r+="^bg($norm_bg)^bg($bg)^fg($fg)$ic$d^fg($norm_fg)^bg($norm_bg)"
 	    done
     fi
-    printf "%s%s\n" "^fg(#b7c1c5)$i  " "$r"
-done < "$ff" | dzen2 -fg "#cccccc" -bg "#131517" -h 20 -fn "lemon-8" -ta c -x 0 &
+    printf " %s%s\n" "^fg(#b7c1c5)^p(;-1)$i ^p() " "$r"
+done < "$ff" | dzen2 -fg "#cccccc" -bg "#131517" -w 400 -h 20 -fn "lemon-8" -ta l -x 0 -e 'button2=;' &
 
-sleep 3
-
-conky -c /home/william/bin/monsterconky | dzen2 -fg "#cccccc" -bg "#131517" -h 20 -w 300 -fn "lemon-8" -ta r -x 1620 &
+conky -c /home/william/bin/monsterconky | dzen2 -fg "#cccccc" -bg "#131517" -h 20 -w 1520 -fn "lemon-8" -ta r -x 400 -e 'button2=;' &
 
 while :; do "$wm" || break; done | tee -a "$ff"
