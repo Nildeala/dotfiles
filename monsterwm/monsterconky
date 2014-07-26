@@ -6,4 +6,4 @@ total_run_times 0
 use_spacer none
  
 TEXT
-^fg(\#707880)${time %A %e %B}  ^fg(\#c5c8c6)${time %H h %M}  
+^fg(\#775759)${time %A %e %B} ^fg(\#C0B18B)${time %H:%M}  

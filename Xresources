@@ -1,8 +1,3 @@
-URxvt.font: xft:Inconsolata:size=10
-!URxvt.font: xft:envypn:size=11
-!URxvt.font: xft:lemon:size=16
-!URxvt.font: xft:uushi:size=9
-URxvt.boldFont: 
 URxvt.scrollBar: false
 URxvt.matcher.button:   1
 URxvt.perl-ext-common:      default,clipboard,url-select
@@ -15,34 +10,43 @@ URxvt.externalBorder:0
 URxvt.geometry:				 100x24
 
 
-!XTerm*faceName: xft:envypn:size=18
-!XTerm*faceSize: 15
-!XTerm*utf8:     2
-!xterm*utf8Title: true
-	
-*background: #1D1F21
-*foreground: #C5C8C6
-! black
- *color0: #282A2E
- *color8: #373B41
-! ! red
- *color1: #A54242
- *color9: #CC6666
-! ! green
- *color2: #8C9440
- *color10: #B5BD68
-! ! yellow
- *color3: #DE935F
- *color11: #F0C674
-! blue
- *color4: #5F819D
- *color12: #81A2BE
-! ! magenta
-*color5: #85678F
-*color13: #B294BB
-! cyan
-*color6: #5E8D87
-*color14: #8ABEB7
-! white
-*color7: #707880
-*color15: #C5C8C6
+# jmk-x11-fonts package from AUR on archlinux
+urxvt*font: -*-neep-medium-r-semicondensed-*-11-*-*-*-*-*-*-*
+urxvt*boldFont: -*-neep-medium-r-semicondensed-*-11-*-*-*-*-*-*-*
+urxvt*italicFont: -*-neep-medium-r-semicondensed-*-11-*-*-*-*-*-*-*
+urxvt*bolditalicFont:-*-neep-medium-r-semicondensed-*-11-*-*-*-*-*-*-*
+
+*.background: #1f1f1f
+*foreground: #c0b18b
+
+!black
+*color0:#4A3637
+*color8:#4A3637
+
+!red
+*color1:#d17b49
+*color9:#d17b49
+
+!green
+*color2:#7b8748
+*color10:#7b8748
+
+!yellow
+*color3:#af865a
+*color11:#af865a
+
+!blue
+*color4:#535C5C
+*color12:#535C5C
+
+!magenta
+*color5:#775759
+*color13:#775759
+
+!cyan
+*color6:#6d715e
+*color14:#6d715e
+
+!white
+*color7:#c0b18b
+*color15:#c0b18b

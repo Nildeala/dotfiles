@@ -1,5 +1,6 @@
 [global]
-    font = Lemon 8
+    font = neep semicondensed 8
+    #font = Fira Mono 5
 
     # The format of the message. Possible variables are:
     # %a appname
@@ -142,8 +143,8 @@
 
 
 [urgency_normal]
-    background = "#30373D"
-    foreground = "#ffffff"
+    background = "#4A3637"
+    foreground = "#C0B18B"
     timeout = 10
 
 [urgency_critical]

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+xset +fp /usr/share/fonts/jmk
 xset fp rehash &
 setxkbmap -layout fr -variant bepo &
 xsetroot -cursor_name "arrow" &
@@ -13,10 +14,10 @@ xrdb -load /home/william/.Xresources
 /usr/bin/start-pulseaudio-x11 &
 
 # First define colors
-norm_fg="#333"
-norm_bg="#131517"
-sel_fg="#B7C1C5"
-sel_bg="#30373D"
+norm_fg="#4A3637"
+norm_bg="#1F1F1F"
+sel_fg="#C0B18B"
+sel_bg="#4A3637"
 err_fg="#ffffff"
 err_bg="#f2777a"
 
@@ -39,25 +40,25 @@ while read -t 2 -r wmout || true; do
 				IFS=':' read -r d w m c u <<< "$desktop"
 				# Set the icon for desktops with windows
 				ic=" "
-				((w)) && ic=" ^fg(#B7C1C5)"
+				((w)) && ic=" ^fg(#C0B18B)"
 				# name each desktop
 				case $d in
-					0) d="● ^fg()" ;;
-					1) d="○ ^fg()" ;;
-					2) d="● ^fg()" ;;
-					3) d="○ ^fg()" ;;
-					4) d="● ^fg()" ;;
-					5) d="○ ^fg()" ;;
-					6) d="● ^fg()" ;;
+					0) d="* ^fg()" ;;
+					1) d="* ^fg()" ;;
+					2) d="* ^fg()" ;;
+					3) d="* ^fg()" ;;
+					4) d="* ^fg()" ;;
+					5) d="* ^fg()" ;;
+					6) d="* ^fg()" ;;
 				esac
 				# we will also display the current desktop's tiling layout/mode
 				((c)) && fg="$sel_fg" bg="$sel_bg" && case $m in
 					# name each layout/mode with a symbol
-					0) i="  ⮘" ;;
+					0) i="  t" ;;
 					1) i="  $w" ;;
- 					2) i="  ⮚" ;;
- 					3) i="  ⮧" ;;
- 					4) i="  ⮛" ;;
+ 					2) i="  b" ;;
+ 					3) i="  g" ;;
+ 					4) i="  f" ;;
  				esac || fg="$norm_fg" bg="$norm_bg"
         			# if the desktop has an urgent hint its color should be err_fg/err_bg
 				((u)) && fg="$err_fg" bg="$err_bg"
@@ -66,8 +67,8 @@ while read -t 2 -r wmout || true; do
 	    done
     fi
     printf " %s%s\n" "^fg(#b7c1c5)^p(;-1)$i ^p() " "$r"
-done < "$ff" | dzen2 -fg "#cccccc" -bg "#131517" -w 400 -h 20 -fn "lemon-8" -ta l -x 0 -e 'button2=;' &
+done < "$ff" | dzen2 -fg "#775759" -bg "#1F1F1F" -w 400 -h 20 -fn "-*-neep-medium-r-semicondensed-*-11-*-*-*-*-*-*-*" -ta l -x 0 -e 'button2=;' &
 
-conky -c /home/william/bin/monsterconky | dzen2 -fg "#cccccc" -bg "#131517" -h 20 -w 1520 -fn "lemon-8" -ta r -x 400 -e 'button2=;' &
+conky -c /home/william/bin/monsterconky | dzen2 -fg "#775759" -bg "#1F1F1F" -h 20 -w 1520 -fn "-*-neep-medium-r-semicondensed-*-11-*-*-*-*-*-*-*" -ta r -x 400 -e 'button2=;' &
 
 while :; do "$wm" || break; done | tee -a "$ff"
