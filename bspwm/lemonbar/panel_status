@@ -1,0 +1,68 @@
+#! /bin/sh
+
+source $(dirname $0)/panel_config
+
+battery(){
+    CAPACITY=$(cat /sys/class/power_supply/BAT0/capacity)
+    BAT_TIME_STATUS=$(acpi -V | grep Battery | awk 'NR==1' | awk '{ print $6 }')
+    REMAINING_TIME=$(acpi -V | grep Battery | awk 'NR==1' | awk '{ print $5 }')
+
+    if [ "$BAT_TIME_STATUS" == "until" ]; then
+    	REMAINING_STATUS=$(echo 'avant charge complète') # French for "until charged"
+    elif [ "$BAT_TIME_STATUS" == "remaining" ]; then	
+    	REMAINING_STATUS=$(echo "d'autonomie") # French for "remaining battery time"
+    fi
+
+    if [ $CAPACITY -lt 30 ]; then
+        echo "%{F$COLOR1}$(printf '%b' "\ue037") $CAPACITY%%  %{F#ff777777}$REMAINING_TIME $REMAINING_STATUS"
+    elif [ $CAPACITY -lt 98 ]; then
+        echo "%{F$COLOR2}$(printf '%b' "\ue037")%{F-} $CAPACITY%%  %{F#ff777777}$REMAINING_TIME $REMAINING_STATUS"
+    else echo "%{F#ffE5F18B}$(printf '%b' "\ue037")%{F-} $CAPACITY%%"
+    fi
+}
+
+volume(){
+    VOLUME=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[1]}')
+    MUTE=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[2]}')
+    if [ "$MUTE" == "yes" ]; then
+        echo "%{F$COLOR1}%{A:pulseaudio-ctl mute:}$(printf '%b' "\ue04f") $VOLUME%%"
+    else echo "%{F$COLOR2}%{A:pulseaudio-ctl mute:}$(printf '%b' "\ue050")%{F-} $VOLUME%%"
+    fi
+}
+
+wifi(){
+	# WIFI ICONS
+	# 
+
+	QUAL=`iwconfig wlp3s0 | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $3}'`
+	MAX=`iwconfig wlp3s0 | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $4}'`
+	PERC=`echo $QUAL*100/$MAX | bc`
+
+	icon=""
+	case $PERC in
+		[0-4])
+			icon=""
+		;;
+		[4-9])
+			icon=""
+		;;
+		[2-3]*)
+			icon=""
+		;;
+		[4-5]*)
+			icon=""
+		;;
+		[6-7]*)
+			icon=""
+		;;
+		*)
+			icon=""
+		;;
+	esac
+	echo "%{F$COLOR2}$icon%{F-} %{F$COLOR3}wlp3s0%{F-}"
+}
+
+while :; do
+    echo "S$(wifi) $SEP $(volume) $SEP $(battery) $SEP %{F$COLOR2}$(printf '%b' "\ue01f")%{F-} $(date +'%a %d %b') $SEP %{F$COLOR2}$(printf '%b' "\ue015")%{F-} $(date +'%H:%M')"
+    sleep 1
+done

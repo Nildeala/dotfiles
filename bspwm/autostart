@@ -1,0 +1,23 @@
+# Fonts loading
+#    Font packages required: stlarch_font termsyn jmk-X11-fonts
+xset +fp /usr/share/fonts/jmk
+xset +fp /usr/share/fonts/local
+xset fp rehash &
+
+# Set Keyboard layout to BÉPO (see http://bepo.fr)
+setxkbmap -layout fr -variant bepo &
+
+xsetroot -cursor_name "arrow" &
+
+redshift &
+
+# Wallpaper
+sh .fehbg &
+
+# Clipboard manager
+clipit -n -d &
+
+compton &
+dunst &
+xrdb -load /home/william/.Xresources
+/usr/bin/start-pulseaudio-x11 &

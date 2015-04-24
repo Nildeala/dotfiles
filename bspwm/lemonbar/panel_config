@@ -1,0 +1,11 @@
+GEOMETRY="1600x30+0+0"
+FONT1="-*-termsyn-medium-*-*-*-11-*-*-*-*-*-*-*"
+FONT2="-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1"
+SEP="%{F#ff666666}$(printf '%b' "·")%{F-}"
+
+BAR_BG="#ff1d1f21"
+BAR_FG="#ffFFFDF0"
+
+COLOR1="#ffcc6666"
+COLOR2="#ff76D7CE"
+COLOR3="#ffFFFDF0"
