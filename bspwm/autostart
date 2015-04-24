@@ -11,6 +11,9 @@ xsetroot -cursor_name "arrow" &
 
 redshift &
 
+# I don't like having my touchpad enabled on my ThinkPad
+synclient TouchpadOff=1
+
 # Wallpaper
 sh .fehbg &
 
