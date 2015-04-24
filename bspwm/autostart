@@ -21,6 +21,7 @@ sh .fehbg &
 clipit -n -d &
 
 compton &
-dunst &
+#dunst &
+twmnd &
 xrdb -load /home/william/.Xresources
 /usr/bin/start-pulseaudio-x11 &
