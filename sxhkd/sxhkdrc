@@ -151,6 +151,9 @@ super + w
 super + space
     ~/bin/lock.sh
 
+Print
+    scrot -e 'mv $f ~/Images/screenshots/' -z && notify-send "Capture d'écran" "enregistrée dans ~/Images/screenshots"
+
 # make sxhkd reload its configuration files:
 super + Escape
     pkill -USR1 -x sxhkd
