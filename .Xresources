@@ -4,49 +4,55 @@ URxvt.perl-ext-common:      default,clipboard,url-select
 URxvt.url-select.launcher:  /usr/bin/firefox
 URxvt.url-select.underline: true
 URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-c:	    perl:clipboard:copy
+URxvt.keysym.M-v:	    perl:clipboard:paste
+URxvt.keysym.M-C-v:	    perl:clipboard:paste_escaped
 URxvt.internalBorder:15
 URxvt.externalBorder:0
-
 URxvt.geometry:				 100x24
 
 
-# jmk-x11-fonts package from AUR on archlinux
-urxvt*font: -*-neep-medium-r-semicondensed-*-11-*-*-*-*-*-*-*
-urxvt*boldFont: -*-neep-medium-r-semicondensed-*-11-*-*-*-*-*-*-*
-urxvt*italicFont: -*-neep-medium-r-semicondensed-*-11-*-*-*-*-*-*-*
-urxvt*bolditalicFont:-*-neep-medium-r-semicondensed-*-11-*-*-*-*-*-*-*
+!jmk-x11-fonts package from AUR on archlinux
+urxvt*font: -*-termsyn-medium-*-*-*-11-*-*-*-*-*-*-*
+urxvt*boldFont: -*-termsyn-bold-*-*-*-11-*-*-*-*-*-*-*
+!urxvt*font: -*-neep-medium-r-semicondensed-*-11-*-*-*-*-*-*-*
+!urxvt*boldFont: -*-neep-medium-r-semicondensed-*-11-*-*-*-*-*-*-*
+!urxvt*italicFont: -*-neep-medium-r-semicondensed-*-11-*-*-*-*-*-*-*
+!urxvt*bolditalicFont:-*-neep-medium-r-semicondensed-*-11-*-*-*-*-*-*-*
 
-*.background: #1f1f1f
-*foreground: #c0b18b
+!Foreground & Background
+*foreground:	#fffdf0
+*background:	#1e1e1e
 
 !black
-*color0:#4A3637
-*color8:#4A3637
+*color0:  #717375
+*color8:  #717375
 
 !red
-*color1:#d17b49
-*color9:#d17b49
+*color1:  #bbe4e0
+*color9:  #4eaba2
 
 !green
-*color2:#7b8748
-*color10:#7b8748
+*color2:  #def1cd
+*color10: #bbf18b
 
 !yellow
-*color3:#af865a
-*color11:#af865a
+*color3:  #e5f18b
+*color11: #d0e81e
 
 !blue
-*color4:#535C5C
-*color12:#535C5C
+*color4:  #76d7ce
+*color12: #bad7d4
 
 !magenta
-*color5:#775759
-*color13:#775759
+*color5:  #efe4f1
+*color13: #e4a8f1
 
 !cyan
-*color6:#6d715e
-*color14:#6d715e
+*color6:  #bbe4e0
+*color14: #4eaba2
 
 !white
-*color7:#c0b18b
-*color15:#c0b18b
+*color7:  #fffdf0
+*color15: #dedacd
+
